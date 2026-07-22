@@ -34,37 +34,34 @@ const counterItems = [
 
 const logoIconsList = [
   {
+    imgPath: "/images/logos/AWS.png",
+  },
+  {
     imgPath: "/images/logos/Azure.png",
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: "/images/logos/GCP.png",
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: "/images/logos/Docker.png",
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    imgPath: "/images/logos/Vercel.png",
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: "/images/logos/Microsoft.png",
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: "/images/logos/Terraform.png",
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: "/images/logos/k8s.png",
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: "/images/logos/jenkins.png",
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-10.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-11.png",
+    imgPath: "/images/logos/linux.png",
   },
 ];
 
@@ -88,8 +85,8 @@ const abilities = [
 
 const techStackImgs = [
   {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    name: "AWS",
+    imgPath: "/images/logos/aws.svg",
   },
   {
     name: "Python Developer",
@@ -111,9 +108,9 @@ const techStackImgs = [
 
 const techStackIcons = [
   {
-    name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
+    name: "AWS",
+    modelPath: "/models/aws-transformed.glb",
+    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
