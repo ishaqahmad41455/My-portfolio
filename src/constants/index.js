@@ -86,7 +86,7 @@ const abilities = [
 const techStackImgs = [
   {
     name: "AWS",
-    imgPath: "/images/logos/aws-logo.png",
+    imgPath: "/images/logos/kubernetes.svg",
   },
   {
     name: "Python Developer",
@@ -108,9 +108,9 @@ const techStackImgs = [
 
 const techStackIcons = [
   {
-    name: "AWS",
-    modelPath: "/models/aws-logo-transparent.glb",
-    scale: 1,
+    name: "Kubernetes",
+    modelPath: "/models/kubernetes-transformed.glb",
+    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
