@@ -26,9 +26,9 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 15, suffix: "+", label: "Years of DevOps Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
+  { value: 3, suffix: "+", label: "Years of DevOps Experience" },
+  { value: 20, suffix: "+", label: "Satisfied Clients" },
+  { value: 30, suffix: "+", label: "Completed Projects" },
   { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
 
@@ -86,7 +86,7 @@ const abilities = [
 const techStackImgs = [
   {
     name: "AWS",
-    imgPath: "/images/logos/aws.svg",
+    imgPath: "/images/logos/aws-logo.png",
   },
   {
     name: "Python Developer",
@@ -109,8 +109,8 @@ const techStackImgs = [
 const techStackIcons = [
   {
     name: "AWS",
-    modelPath: "/models/aws-transformed.glb",
-    scale: 0.8,
+    modelPath: "/models/aws-logo-transparent.glb",
+    scale: 1,
     rotation: [0, 0, 0],
   },
   {
@@ -141,55 +141,64 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    review:
+      "Ishaq has demonstrated strong DevOps expertise by designing and managing reliable CI/CD pipelines, automating cloud infrastructure, and supporting production workloads across multiple environments.",
+    imgPath: "/images/exp4.png",
+    logoPath: "/images/logo4.png",
+    title: "DevOps Engineer",
+    date: "April 2025 - Present",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Architected and managed CI/CD pipelines in Azure DevOps for .NET, Java, and Node.js applications, reducing deployment lead time by 40%.",
+      "Engineered scalable hosting infrastructure using Azure App Services and IIS with health checks and automated rollback strategies.",
+      "Designed and managed deployment strategies across QA, Pre-Production, and Production environments.",
+      "Integrated Azure Blob Storage into deployment workflows and improved document storage reliability.",
+      "Implemented least-privilege access governance using Azure AD and optimized source control workflows using Azure Repos.",
+      "Used Jenkins and GitHub Actions to automate build and deployment workflows across application environments.",
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    review:
+      "At Anemoia.dev, Ishaq worked extensively on cloud infrastructure, automation, CI/CD, Docker deployments, and Linux administration, helping teams deliver applications faster and more reliably.",
+    imgPath: "/images/exp5.png",
+    logoPath: "/images/logo5.png",
+    title: "DevOps Engineer",
+    date: "July 2023 - April 2025",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Built CI/CD pipelines using Jenkins, GitHub Actions, and Azure DevOps, improving deployment reliability by 35%.",
+      "Implemented Docker-based application deployments across cloud and on-premises environments.",
+      "Developed Bash and Shell automation scripts that eliminated approximately 80% of repetitive server tasks.",
+      "Managed Linux servers, troubleshooting system issues and optimizing application and infrastructure performance.",
+      "Managed Git and GitHub repositories, branching strategies, code reviews, and team collaboration workflows.",
+      "Provisioned cloud infrastructure using Terraform, achieving up to 70% faster environment setup across projects.",
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    review:
+      "Ishaq was accepted into the FlyRank AI Internship program as a Machine Learning Engineering Intern, gaining experience in a structured six-week machine learning internship program.",
+    imgPath: "/images/exp6.png",
+    logoPath: "/images/logo6.png",
+    title: "Machine Learning Engineering Intern",
+    date: "July 2026 - August 2026",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Accepted into the FlyRank AI Internship program as a Machine Learning Engineering Intern.",
+      "Participated in a six-week Machine Learning internship program from July 1, 2026, to August 12, 2026.",
+      "Developed practical exposure to machine learning engineering through participation in the internship program.",
     ],
   },
 ];
 
 const expLogos = [
   {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
+    name: "logo5",
+    imgPath: "/images/logo5.png",
   },
   {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
+    name: "logo4",
+    imgPath: "/images/logo4.png",
   },
   {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
+    name: "logo6",
+    imgPath: "/images/logo6.png",
   },
 ];
 
