@@ -34,16 +34,16 @@ const counterItems = [
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/AWS.png",
+    imgPath: "/images/logos/aws.png",
   },
   {
-    imgPath: "/images/logos/Azure.png",
+    imgPath: "/images/logos/azure.png",
   },
   {
-    imgPath: "/images/logos/GCP.png",
+    imgPath: "/images/logos/gcp.png",
   },
   {
-    imgPath: "/images/logos/Docker.png",
+    imgPath: "/images/logos/docker.png",
   },
   {
     imgPath: "/images/logos/Vercel.png",
@@ -52,16 +52,19 @@ const logoIconsList = [
     imgPath: "/images/logos/Microsoft.png",
   },
   {
-    imgPath: "/images/logos/Terraform.png",
+    imgPath: "/images/logos/terraform.png",
   },
   {
-    imgPath: "/images/logos/k8s.png",
+    imgPath: "/images/logos/kubernetes.png",
   },
   {
     imgPath: "/images/logos/jenkins.png",
   },
   {
     imgPath: "/images/logos/linux.png",
+  },
+  {
+    imgPath: "/images/logos/git.png",
   },
 ];
 
@@ -86,56 +89,66 @@ const abilities = [
 const techStackImgs = [
   {
     name: "AWS",
-    imgPath: "/images/logos/kubernetes.svg",
+    imgPath: "/images/icons/aws.png",
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    name: "Az",
+    imgPath: "/images/icons/azure.png",
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    name: "GCP",
+    imgPath: "/images/icons/gcp.png",
   },
   {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    name: "Terraform",
+    imgPath: "/images/icons/terraform.png",
   },
   {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    name: "Kubernetes",
+    imgPath: "/images/icons/kubernetes.png",
+  },
+  {
+    name: "Docker",
+    imgPath: "/images/icons/docker.png",
   },
 ];
 
 const techStackIcons = [
   {
-    name: "Kubernetes",
-    modelPath: "/models/kubernetes-transformed.glb",
+    name: "AWS",
+    modelPath: "/models/glbfiles/aws-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
+    name: "Azure",
+    modelPath: "/models/glbfiles/azure-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
+    name: "GCP",
+    modelPath: "/models/glbfiles/gcp-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
+    name: "Terraform",
+    modelPath: "/models/glbfiles/terraform-transformed.glb",
+    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
+    name: "Kubernetes",
+    modelPath: "/models/glbfiles/kubernetes-transformed.glb",
+    scale: 0.8,
+    rotation: [0, 0, 0],
+  },
+  {
+    name: "Docker",
+    modelPath: "/models/glbfiles/docker-transformed.glb",
+    scale: 0.8,
+    rotation: [0, 0, 0],
   },
 ];
 
