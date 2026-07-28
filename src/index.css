@@ -29,13 +29,17 @@ section {
   --color-blue-100: #2d2d38;
 }
 
-@layer utilities {
-  .flex-center {
-    @apply flex justify-center items-center;
-  }
-  .flex-col-center {
-    @apply flex flex-col justify-center items-center;
-  }
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @layer components {
@@ -96,6 +100,41 @@ section {
 
   .hero-badge {
     @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+  }
+
+  /* Profile picture + name shown at the top of the hero section */
+  .profile-intro {
+    @apply flex items-center gap-4 relative z-10;
+  }
+
+  .profile-pic {
+    @apply size-16 md:size-20 rounded-full object-cover
+      border-2 border-white-50/70 shadow-[0_0_25px_rgba(217,236,255,0.25)];
+  }
+
+  .profile-name {
+    @apply text-lg md:text-2xl font-semibold text-white leading-tight;
+  }
+
+  .profile-title {
+    @apply text-white-50 text-xs md:text-sm;
+  }
+
+  /* Download CV button, styled to match the existing cta-button look */
+  .download-cv-btn {
+    @apply flex items-center gap-2 px-6 py-4 rounded-lg
+      border border-black-50 bg-black-100 text-white-50 font-medium
+      hover:bg-white hover:text-black transition-colors duration-300
+      cursor-pointer w-fit;
+
+    img {
+      @apply transition-transform duration-300;
+      filter: invert(1);
+    }
+
+    &:hover img {
+      filter: invert(0);
+    }
   }
 
   .hero-3d-layout {
@@ -294,6 +333,36 @@ section {
       img {
         @apply inline-block;
       }
+    }
+  }
+
+  /* Fiverr badge shown on testimonial cards sourced from Fiverr */
+  .fiverr-badge {
+    @apply inline-flex items-center gap-1 text-[11px] md:text-xs font-semibold
+      text-[#1dbf73] bg-[#1dbf73]/10 border border-[#1dbf73]/30
+      rounded-full px-2.5 py-1 w-fit;
+  }
+
+  /* "Hire Me on Fiverr" call-to-action button (Services section) */
+  .fiverr-cta-btn {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4
+      rounded-lg bg-[#1dbf73] text-black font-semibold
+      hover:bg-[#19a463] transition-colors duration-300 cursor-pointer;
+  }
+
+  /* Small tech-stack pills used on project case study cards */
+  .tech-badge {
+    @apply text-xs font-medium text-white-50 bg-black-200
+      border border-black-50 rounded-full px-3 py-1;
+  }
+
+  /* GitHub / LinkedIn icons shown in the desktop navbar */
+  .navbar-social-icon {
+    @apply size-9 flex-center rounded-full border border-black-50
+      bg-black-100 hover:bg-black-50 transition-colors duration-300;
+
+    img {
+      @apply size-4 object-contain;
     }
   }
 

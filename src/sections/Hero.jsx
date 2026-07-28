@@ -9,6 +9,12 @@ import HeroExperience from "../components/models/hero_models/HeroExperience";
 const Hero = () => {
   useGSAP(() => {
     gsap.fromTo(
+      ".profile-intro",
+      { y: -20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+    );
+
+    gsap.fromTo(
       ".hero-text h1",
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
@@ -25,6 +31,19 @@ const Hero = () => {
         {/* LEFT: Hero Content */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
+            {/* Profile picture + name */}
+            <div className="profile-intro">
+              <img
+                src="/images/profile.jpg"
+                alt="Ishaq Ahmad Khan"
+                className="profile-pic"
+              />
+              <div>
+                <h2 className="profile-name">Ishaq Ahmad Khan</h2>
+                <p className="profile-title">DevOps Engineer &bull; Cloud &amp; Automation</p>
+              </div>
+            </div>
+
             <div className="hero-text">
               <h1>
                 Shaping
@@ -55,11 +74,28 @@ const Hero = () => {
               code.
             </p>
 
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
+            <div className="flex flex-wrap items-center gap-5 relative z-20">
+              <Button
+                text="See My Work"
+                className="md:w-80 md:h-16 w-60 h-12"
+                id="counter"
+              />
+
+              <a
+                href="/cv/Ishaq_Ahmad_Khan_CV.pdf"
+                download="Ishaq_Ahmad_Khan_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="download-cv-btn"
+              >
+                <span>Download CV</span>
+                <img
+                  src="/images/arrow-down.svg"
+                  alt=""
+                  className="size-4 -rotate-90"
+                />
+              </a>
+            </div>
           </div>
         </header>
 

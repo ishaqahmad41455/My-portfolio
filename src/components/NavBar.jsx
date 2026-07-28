@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { navLinks } from "../constants";
+import { navLinks, socialImgs } from "../constants";
 
 const NavBar = () => {
   // track if the user has scrolled down the page
@@ -22,6 +22,11 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // only show GitHub + LinkedIn in the navbar (Footer shows the full social list)
+  const navSocials = socialImgs.filter(
+    (social) => social.name === "github" || social.name === "linkedin"
+  );
+
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
@@ -42,11 +47,28 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            {navSocials.map((social) => (
+              <a
+                key={social.name}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-social-icon"
+                aria-label={social.name}
+              >
+                <img src={social.imgPath} alt={social.name} />
+              </a>
+            ))}
           </div>
-        </a>
+
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );
