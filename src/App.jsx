@@ -5,7 +5,7 @@ import TechStack from "./sections/TechStack";
 import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import AboutMe from "./sections/AboutMe";
-import ShowcaseSection from "./sections/ShowcaseSection";
+// import ShowcaseSection from "./sections/ShowcaseSection";
 import Projects from "./sections/Projects";
 import LogoShowcase from "./sections/LogoShowcase";
 import Certifications from "./sections/Certifications";
@@ -18,7 +18,7 @@ const App = () => (
     <Navbar />
     <Hero />
     <AboutMe />
-    <ShowcaseSection />
+    {/* <ShowcaseSection /> */}
     <Projects />
     <LogoShowcase />
     <Certifications />

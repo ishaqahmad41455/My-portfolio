@@ -491,6 +491,73 @@ section {
 }
 /* marquee end */
 
+.devops-hero-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ /* .devops-hero-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} */
+
+.devops-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.devops-glow-1 { width: 260px; height: 260px; background: #4cc9f0; top: 10%; right: 10%; }
+.devops-glow-2 { width: 220px; height: 220px; background: #9d4edd; bottom: 5%; left: 5%; }
+
+.devops-pipeline-svg { width: 100%; max-width: 560px; height: auto; }
+/* .devops-pipeline-svg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+} */
+
+.node-ring { fill: none; stroke: #4cc9f0; stroke-width: 1.5; }
+.node-ring-accent { stroke: #a259ff; }
+.node-circle { fill: #0e0e10; stroke: #4cc9f0; stroke-width: 2; }
+.node-circle-accent { fill: #1c1c21; stroke: #a259ff; stroke-width: 2.5; }
+.node-icon { fill: #d9ecff; font-size: 16px; font-family: monospace; font-weight: 600; }
+.node-icon-lg { font-size: 24px; }
+
+.devops-terminal {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  width: min(260px, 70%);
+  background: #0e0e10;
+  border: 1px solid #282732;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.devops-terminal-header { display: flex; gap: 6px; margin-bottom: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 9999px; }
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+.devops-terminal-lines p { font-family: monospace; font-size: 11px; color: #d9ecff; margin: 2px 0; }
+.prompt { color: #4cc9f0; margin-right: 4px; }
+.line-dim { color: #839cb5; }
+.line-success { color: #27c93f; }
+
 .card {
   --start: 0;
   position: relative;

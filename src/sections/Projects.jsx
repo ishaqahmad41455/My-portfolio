@@ -41,11 +41,11 @@ const Projects = () => {
               key={project.title}
               className="case-study-card card-border rounded-xl overflow-hidden flex flex-col"
             >
-              <div className="h-48 bg-black-200 overflow-hidden">
+              <div className="w-full bg-black-200 overflow-hidden">
                 <img
                   src={project.imgPath}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto block"
                 />
               </div>
 

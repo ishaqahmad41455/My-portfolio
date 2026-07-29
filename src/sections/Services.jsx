@@ -40,11 +40,11 @@ const Services = () => {
               key={service.title}
               className="service-card card-border rounded-xl p-8 flex flex-col gap-4"
             >
-              <div className="size-14 flex items-center justify-center rounded-full bg-black-200">
+              <div className="size-25 flex items-center justify-center rounded-full bg-black-200 overflow-hidden">
                 <img
                   src={service.imgPath}
                   alt={service.title}
-                  className="size-6"
+                  className="w-full h-full object-contain p-2.5"
                 />
               </div>
               <h3 className="text-white text-xl font-semibold">
