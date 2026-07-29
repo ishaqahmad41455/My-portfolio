@@ -141,7 +141,7 @@ const techStackIcons = [
   {
     name: "GCP",
     modelPath: "/models/glbfiles/gcp-transformed.glb",
-    scale: 5,
+    scale: 0.8,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
@@ -372,32 +372,32 @@ const services = [
   {
     title: "CI/CD Pipeline Setup",
     desc: "Design and implement automated build, test, and deployment pipelines using Jenkins, GitHub Actions, or Azure DevOps.",
-    imgPath: "/images/time.png",
+    imgPath: "/images/cicd.png",
   },
   {
     title: "Cloud Infrastructure & Migration",
     desc: "Provision and migrate infrastructure on AWS, Azure, or GCP with security and cost-efficiency in mind.",
-    imgPath: "/images/seo.png",
+    imgPath: "/images/cloud_infrastructure_migration.png",
   },
   {
     title: "Infrastructure as Code",
     desc: "Turn manual, error-prone setups into versioned, repeatable Terraform or CloudFormation modules.",
-    imgPath: "/images/chat.png",
+    imgPath: "/images/infrastructure_as_code.png",
   },
   {
     title: "Containerization & Orchestration",
     desc: "Dockerize applications and set up Kubernetes for scalable, portable deployments.",
-    imgPath: "/images/time.png",
+    imgPath: "/images/containerization_orchestration.png",
   },
   {
     title: "Server & Linux Administration",
     desc: "Configure, harden, and maintain Linux servers, including monitoring and automated maintenance scripts.",
-    imgPath: "/images/seo.png",
+    imgPath: "/images/server_linux_administration.png",
   },
   {
     title: "DevOps Consulting & Audits",
     desc: "Review your existing pipeline/infrastructure and provide a prioritized roadmap of improvements.",
-    imgPath: "/images/chat.png",
+    imgPath: "/images/devops_consulting_audits.png",
   },
 ];
 
@@ -408,48 +408,48 @@ const fiverrUrl = "https://www.fiverr.com/ishaqahmad745";
 // `source: "fiverr"` shows the green "Fiverr Client" badge on the card.
 const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
+    name: "Bryn Thomas",
+    mentions: "@bthomas85381",
     source: "fiverr",
     review:
-      "I can’t say enough good things about Ishaq. He was able to take our complex project requirements and turn them into a seamless, functional solution. His problem-solving abilities are outstanding.",
+      "I recently had the pleasure of working with Ishaq on Fiverr to build out my LLM OS model, and I couldn't be more thrilled with the results. From start to finish, Ishaq demonstrated exceptional skill, attention to detail, and a remarkable ability to overcome challenges",
     imgPath: "/images/client1.png",
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "Cloud Solution",
+    mentions: "@clouds_solution",
     source: "fiverr",
     review:
-      "Working with Ishaq was a fantastic experience. He transformed our outdated infrastructure into a modern, reliable pipeline. His attention to detail and commitment to quality are unmatched. Highly recommend him for any DevOps work.",
-    imgPath: "/images/client3.png",
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    source: "fiverr",
-    review:
-      "Collaborating with Ishaq was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. If you're seeking to elevate your cloud infrastructure, Ishaq is the ideal partner.",
+      "Very honest personality and professional. I would love to work again. Thank you!",
     imgPath: "/images/client2.png",
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
+    name: "John",
+    mentions: "@laujohn",
+    source: "fiverr",
+    review:
+      "Collaborating with Ishaq was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. If you're seeking to elevate your cloud infrastructure, Ishaq is the ideal partner.",
+    imgPath: "/images/client3.png",
+  },
+  {
+    name: "Crist Frick",
+    mentions: "@christfrick",
     source: "fiverr",
     review:
       "Ishaq was a pleasure to work with. He turned our fragile deployment process into a fast, automated workflow that's both reliable and easy to maintain. Fantastic work overall.",
-    imgPath: "/images/client5.png",
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    source: "fiverr",
-    review:
-      "Ishaq’s expertise in cloud and DevOps is truly impressive. He delivered a robust and scalable CI/CD solution for our platform, and our deployment times have significantly decreased since the launch. He’s a true professional!",
     imgPath: "/images/client4.png",
   },
   {
-    name: "Albert Flores",
-    mentions: "@albertflores",
+    name: "Umer",
+    mentions: "@umer1998",
+    source: "fiverr",
+    review:
+      "Ishaq’s expertise in cloud and DevOps is truly impressive. He delivered a robust and scalable CI/CD solution for our platform, and our deployment times have significantly decreased since the launch. He’s a true professional!",
+    imgPath: "/images/client5.png",
+  },
+  {
+    name: "Meajr65",
+    mentions: "@meajr65",
     source: "fiverr",
     review:
       "Ishaq understood our requirements perfectly and delivered infrastructure that exceeded our expectations. His skills across cloud, automation, and CI/CD are top-notch.",

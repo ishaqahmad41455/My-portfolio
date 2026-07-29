@@ -99,10 +99,11 @@ const Hero = () => {
           </div>
         </header>
 
-        {/* RIGHT: 3D Model or Visual */}
+        {/* RIGHT: Animated DevOps visual */}
         <figure>
           <div className="hero-3d-layout">
             <HeroExperience />
+            {/* <DevOpsHeroVisual /> */}
           </div>
         </figure>
       </div>

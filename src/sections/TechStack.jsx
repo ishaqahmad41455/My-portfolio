@@ -56,10 +56,19 @@ const TechStack = () => {
                   component is hovered. */}
               <div className="tech-card-animated-bg" />
               <div className="tech-card-content">
-                {/* The tech-icon-wrapper div contains the TechIconCardExperience component, 
-                    which renders the 3D model of the tech stack icon. */}
+                {/* The tech-icon-wrapper div contains either the 3D model (TechIconCardExperience)
+                    or a plain animated 2D logo fallback, used when a model's source GLB is
+                    broken/incorrect (currently GCP — see constants/index.js for details). */}
                 <div className="tech-icon-wrapper">
-                  <TechIconCardExperience model={techStackIcon} />
+                  {techStackIcon.imgPath ? (
+                    <img
+                      src={techStackIcon.imgPath}
+                      alt={techStackIcon.name}
+                      className="tech-icon-2d"
+                    />
+                  ) : (
+                    <TechIconCardExperience model={techStackIcon} />
+                  )}
                 </div>
                 {/* The padding-x and w-full classes are used to add horizontal padding to the 
                     text and make it take up the full width of the component. */}
