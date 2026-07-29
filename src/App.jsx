@@ -22,12 +22,12 @@ const App = () => (
     <Projects />
     <LogoShowcase />
     <Certifications />
-    <FeatureCards />
     <Experience />
     <TechStack />
     <Services />
     <Testimonials />
     <Contact />
+    <FeatureCards />
     <Footer />
   </>
 );

@@ -40,11 +40,11 @@ const Certifications = () => {
               key={cert.title}
               className="cert-card card-border rounded-xl p-8 flex flex-col gap-4"
             >
-              <div className="size-14 flex items-center justify-center rounded-full bg-black-200">
+              <div className="size-25 flex items-center justify-center rounded-full bg-black-200 overflow-hidden">
                 <img
                   src={cert.imgPath}
                   alt={cert.issuer}
-                  className="size-8 object-contain"
+                  className="w-full h-full object-contain p-2.5"
                 />
               </div>
               <div>
