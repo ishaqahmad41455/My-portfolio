@@ -1,22 +1,21 @@
 import { abilities } from "../constants";
+import TitleHeader from "../components/TitleHeader";
 
+// Renders the "why work with me" highlight cards. Deliberately kept as its
+// own lightweight section (no scroll animation) so it can sit right above
+// the Footer without competing with heavier GSAP-driven sections.
 const FeatureCards = () => (
-  <div className="w-full padding-x-lg">
-    <div className="mx-auto grid-3-cols">
+  <div className="w-full section-padding padding-x-lg">
+    <TitleHeader title="Why Work With Me" sub="✨ What Sets My Work Apart" />
+
+    <div className="mx-auto feature-grid mt-12">
       {abilities.map(({ imgPath, title, desc }) => (
-        <div
-          key={title}
-          className="card-border rounded-xl p-8 flex flex-col gap-4"
-        >
-          <div className="size-25 flex items-center justify-center rounded-full bg-black-200 overflow-hidden">
-            <img
-              src={imgPath}
-              alt={title}
-              className="w-full h-full object-contain p-2.5"
-            />
+        <div key={title} className="feature-card">
+          <div className="feature-icon-wrapper">
+            <img src={imgPath} alt={title} className="feature-icon" />
           </div>
-          <h3 className="text-white text-2xl font-semibold mt-2">{title}</h3>
-          <p className="text-white-50 text-lg">{desc}</p>
+          <h3 className="feature-title">{title}</h3>
+          <p className="feature-desc">{desc}</p>
         </div>
       ))}
     </div>

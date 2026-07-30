@@ -25,9 +25,9 @@ const App = () => (
     <Experience />
     <TechStack />
     <Services />
+    <FeatureCards />
     <Testimonials />
     <Contact />
-    <FeatureCards />
     <Footer />
   </>
 );

@@ -3,6 +3,9 @@
 
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+  --accent-blue: #4cc9f0;
+  --accent-purple: #9d4edd;
+  --accent-violet: #a259ff;
 }
 
 html,
@@ -145,7 +148,10 @@ section {
     @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
 
     &.scrolled {
-      @apply top-0 bg-black;
+      @apply top-0 bg-black/70;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 236, 255, 0.06);
     }
 
     &.not-scrolled {
@@ -156,39 +162,112 @@ section {
       @apply mx-auto flex items-center justify-between;
     }
 
+    /* Name / logo -------------------------------------------------- */
     .logo {
-      @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+      @apply relative inline-block text-xl md:text-2xl font-bold tracking-tight;
     }
 
+    .logo-text {
+      display: inline-block;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #d9ecff 35%,
+        var(--accent-blue) 65%,
+        var(--accent-violet) 100%
+      );
+      background-size: 200% auto;
+      background-position: 0% center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: background-position 0.6s ease, filter 0.4s ease,
+        transform 0.3s ease;
+    }
+
+    .logo:hover .logo-text {
+      background-position: 100% center;
+      filter: drop-shadow(0 0 14px rgba(162, 89, 255, 0.45));
+      transform: translateY(-1px);
+    }
+
+    /* Desktop nav links ---------------------------------------------- */
     nav.desktop {
       @apply hidden lg:flex items-center;
 
       ul {
-        @apply flex space-x-8;
+        @apply flex items-center gap-10 xl:gap-12;
 
         li {
-          @apply text-white-50 relative;
+          @apply text-white-50 relative py-1;
 
-          span {
-            @apply transition-colors duration-300 hover:text-white;
+          span:first-child {
+            @apply transition-colors duration-300 text-sm xl:text-base tracking-wide;
           }
 
           .underline {
-            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
+            @apply absolute -bottom-1 left-0 w-0 h-[2px] rounded-full transition-all duration-300 ease-out;
+            background: linear-gradient(
+              90deg,
+              var(--accent-blue),
+              var(--accent-violet)
+            );
+            box-shadow: 0 0 10px rgba(162, 89, 255, 0.6);
+          }
+
+          &:hover span:first-child {
+            @apply text-white;
+          }
+
+          &:hover .underline {
+            @apply w-full;
+          }
+
+          /* Active section, driven by scroll position (see NavBar.jsx) */
+          &.active span:first-child {
+            color: #fff;
+            text-shadow: 0 0 14px rgba(76, 201, 240, 0.45);
+          }
+
+          &.active .underline {
+            @apply w-full;
           }
         }
       }
     }
 
+    /* Contact me button ------------------------------------------------ */
     .contact-btn {
-      @apply flex;
+      @apply relative flex rounded-full overflow-hidden shrink-0;
+      padding: 1.5px;
+      background: linear-gradient(
+        135deg,
+        var(--accent-blue),
+        var(--accent-purple),
+        var(--accent-violet)
+      );
+      background-size: 220% 220%;
+      background-position: 0% 50%;
+      box-shadow: 0 4px 18px rgba(162, 89, 255, 0.25);
+      transition: transform 0.35s ease, box-shadow 0.35s ease,
+        background-position 0.6s ease;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply px-6 py-2.5 rounded-full bg-black-100 transition-colors duration-300;
 
         span {
-          @apply group-hover:text-white transition-colors duration-300;
+          @apply text-white text-sm xl:text-base font-medium transition-colors duration-300;
         }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 32px rgba(162, 89, 255, 0.45);
+        background-position: 100% 50%;
+      }
+
+      &:hover .inner {
+        @apply bg-transparent;
       }
     }
   }
@@ -358,12 +437,64 @@ section {
 
   /* GitHub / LinkedIn icons shown in the desktop navbar */
   .navbar-social-icon {
-    @apply size-9 flex-center rounded-full border border-black-50
-      bg-black-100 hover:bg-black-50 transition-colors duration-300;
+    @apply size-10 flex items-center justify-center rounded-full
+      border border-black-50 bg-black-100 transition-all duration-300;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 
     img {
-      @apply size-4 object-contain;
+      @apply object-contain;
+      width: 50%;
+      height: 50%;
     }
+
+    &:hover {
+      @apply bg-black-50;
+      transform: translateY(-3px);
+      border-color: rgba(76, 201, 240, 0.5);
+      box-shadow: 0 10px 22px rgba(76, 201, 240, 0.25);
+    }
+  }
+
+  /* Highlight / feature cards (Quality Focus, Reliable Communication, etc.) */
+  .feature-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8;
+  }
+
+  .feature-card {
+    @apply relative flex flex-col items-start gap-3 rounded-2xl p-6
+      border border-black-50 transition-all duration-300;
+    background: linear-gradient(
+      180deg,
+      rgba(40, 39, 50, 0.55) 0%,
+      rgba(14, 14, 16, 0.55) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .feature-card:hover {
+    @apply -translate-y-2;
+    border-color: rgba(76, 201, 240, 0.35);
+    box-shadow: 0 18px 38px rgba(76, 201, 240, 0.12),
+      0 6px 16px rgba(162, 89, 255, 0.12);
+  }
+
+  .feature-icon-wrapper {
+    @apply size-14 flex items-center justify-center rounded-full bg-black-200 overflow-hidden shrink-0;
+  }
+
+  .feature-icon {
+    @apply object-contain;
+    width: 50%;
+    height: 50%;
+  }
+
+  .feature-title {
+    @apply text-white text-lg font-semibold mt-1;
+  }
+
+  .feature-desc {
+    @apply text-white-50 text-sm leading-relaxed;
   }
 
   .footer {
@@ -381,11 +512,22 @@ section {
       @apply flex items-center justify-center gap-5;
 
       .icon {
-        @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+        @apply border border-black-50 bg-black-100 flex justify-center items-center
+          rounded-full size-11 md:size-12 cursor-pointer transition-all duration-300;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      .icon:hover {
+        @apply bg-black-50;
+        transform: translateY(-3px);
+        border-color: rgba(76, 201, 240, 0.5);
+        box-shadow: 0 10px 22px rgba(76, 201, 240, 0.25);
       }
 
       img {
-        @apply inline-block;
+        @apply object-contain;
+        width: 45%;
+        height: 45%;
       }
     }
   }
