@@ -123,6 +123,10 @@ const techStackImgs = [
     name: "Docker",
     imgPath: "/images/icons/docker.png",
   },
+  {
+    name: "Git",
+    imgPath: "/images/icons/git.svg",
+  },
 ];
 
 const techStackIcons = [
@@ -133,16 +137,22 @@ const techStackIcons = [
     rotation: [0, 0, 0],
   },
   {
+    // The azure-transformed.glb has no colored/front-facing geometry
+    // pointed at the camera (see chat notes) — falls back to the flat icon.
     name: "Azure",
+    // imgPath: "/images/icons/azure.png",
     modelPath: "/models/glbfiles/azure-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
+    // gcp-transformed.glb lost its real shape in the optimize/compress step
+    // and renders as an unrecognizable capsule — flat icon looks correct.
     name: "GCP",
+    // imgPath: "/images/icons/gcp.png",
     modelPath: "/models/glbfiles/gcp-transformed.glb",
     scale: 0.8,
-    rotation: [0, -Math.PI / 2, 0],
+    rotation: [0, 0, 0],
   },
   {
     name: "Terraform",
@@ -157,10 +167,19 @@ const techStackIcons = [
     rotation: [0, 0, 0],
   },
   {
+    // Same issue as Azure — the extruded side walls dominate the view
+    // and the whale reads as a near-black silhouette. Flat icon instead.
     name: "Docker",
+    // imgPath: "/images/icons/docker.png",
     modelPath: "/models/glbfiles/docker-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+  },
+  {
+    name: "Project Management",
+    modelPath: "/models/glbfiles/git-svg-transformed.glb",
+    scale: 0.05,
+    rotation: [0, -Math.PI / 4, 0],
   },
 ];
 
