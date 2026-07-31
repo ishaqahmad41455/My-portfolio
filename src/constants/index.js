@@ -252,14 +252,14 @@ const certifications = [
     title: "AWS Certified Solutions Architect – Associate",
     issuer: "Amazon Web Services",
     date: "2024",
-    imgPath: "/images/Icons/aws.png",
+    imgPath: "/images/Icons/aws_cer1.png",
     credentialUrl: "#",
   },
   {
-    title: "Microsoft Certified: Azure Administrator Associate",
+    title: "Microsoft Certified: DevOps Engineer Expert",
     issuer: "Microsoft",
     date: "2024",
-    imgPath: "/images/Icons/azure.png",
+    imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
   }
   // {
