@@ -141,7 +141,7 @@ const techStackIcons = [
     // pointed at the camera (see chat notes) — falls back to the flat icon.
     name: "Azure",
     // imgPath: "/images/icons/azure.png",
-    modelPath: "/models/glbfiles/azure-transformed.glb",
+    modelPath: "/models/glbfiles/azure.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
@@ -171,7 +171,7 @@ const techStackIcons = [
     // and the whale reads as a near-black silhouette. Flat icon instead.
     name: "Docker",
     // imgPath: "/images/icons/docker.png",
-    modelPath: "/models/glbfiles/docker-transformed.glb",
+    modelPath: "/models/glbfiles/docker.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
@@ -251,14 +251,14 @@ const certifications = [
   {
     title: "AWS Certified Solutions Architect – Associate",
     issuer: "Amazon Web Services",
-    date: "2024",
+    date: "2026",
     imgPath: "/images/Icons/aws_cer1.png",
     credentialUrl: "#",
   },
   {
     title: "Microsoft Certified: DevOps Engineer Expert",
     issuer: "Microsoft",
-    date: "2024",
+    date: "2026",
     imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
   }
