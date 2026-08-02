@@ -87,15 +87,21 @@ section {
     @apply grid grid-cols-1 xl:grid-cols-12 gap-10;
   }
 
-  .hero-layout {
+  /* .hero-layout {
     @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+  } */
+
+  .hero-layout {
+    @apply relative z-10 xl:mt-20 mt-32 min-h-screen py-24 flex xl:items-center items-start justify-center;
   }
 
   .hero-text {
     @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+
     img {
       @apply size-8 md:size-10 object-contain;
     }
+
     .slide {
       @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
     }
@@ -110,9 +116,14 @@ section {
     @apply flex items-center gap-4 relative z-10;
   }
 
+  /* .profile-pic {
+    @apply size-16 md:size-20 rounded-full object-cover border-2 border-white-50/70 shadow-[0_0_25px_rgba(217, 236, 255, 0.25)];
+  } */
+
   .profile-pic {
-    @apply size-16 md:size-20 rounded-full object-cover
-      border-2 border-white-50/70 shadow-[0_0_25px_rgba(217,236,255,0.25)];
+    @apply size-16 md:size-20 rounded-full object-cover border-2 border-white-50/70;
+
+    box-shadow: 0 0 25px rgba(217, 236, 255, .25);
   }
 
   .profile-name {
@@ -125,10 +136,7 @@ section {
 
   /* Download CV button, styled to match the existing cta-button look */
   .download-cv-btn {
-    @apply flex items-center gap-2 px-6 py-4 rounded-lg
-      border border-black-50 bg-black-100 text-white-50 font-medium
-      hover:bg-white hover:text-black transition-colors duration-300
-      cursor-pointer w-fit;
+    @apply flex items-center gap-2 px-6 py-4 rounded-lg border border-black-50 bg-black-100 text-white-50 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-fit;
 
     img {
       @apply transition-transform duration-300;
@@ -140,8 +148,16 @@ section {
     }
   }
 
-  .hero-3d-layout {
+  /* .hero-3d-layout {
     @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+  } */
+
+  .hero-3d-layout {
+    @apply absolute xl:w-[60%] lg:w-[55%] md:w-[50%] w-full h-full;
+
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .navbar {
@@ -169,13 +185,11 @@ section {
 
     .logo-text {
       display: inline-block;
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #d9ecff 35%,
-        var(--accent-blue) 65%,
-        var(--accent-violet) 100%
-      );
+      background: linear-gradient(90deg,
+          #ffffff 0%,
+          #d9ecff 35%,
+          var(--accent-blue) 65%,
+          var(--accent-violet) 100%);
       background-size: 200% auto;
       background-position: 0% center;
       -webkit-background-clip: text;
@@ -207,11 +221,9 @@ section {
 
           .underline {
             @apply absolute -bottom-1 left-0 w-0 h-[2px] rounded-full transition-all duration-300 ease-out;
-            background: linear-gradient(
-              90deg,
-              var(--accent-blue),
-              var(--accent-violet)
-            );
+            background: linear-gradient(90deg,
+                var(--accent-blue),
+                var(--accent-violet));
             box-shadow: 0 0 10px rgba(162, 89, 255, 0.6);
           }
 
@@ -240,12 +252,10 @@ section {
     .contact-btn {
       @apply relative flex rounded-full overflow-hidden shrink-0;
       padding: 1.5px;
-      background: linear-gradient(
-        135deg,
-        var(--accent-blue),
-        var(--accent-purple),
-        var(--accent-violet)
-      );
+      background: linear-gradient(135deg,
+          var(--accent-blue),
+          var(--accent-purple),
+          var(--accent-violet));
       background-size: 220% 220%;
       background-position: 0% 50%;
       box-shadow: 0 4px 18px rgba(162, 89, 255, 0.25);
@@ -328,19 +338,15 @@ section {
     @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
 
     .bg-circle {
-      @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
-        w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
-        rounded-full bg-white-50 transition-all duration-500;
+      @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 w-[120%] h-[120%] group-hover:size-10 group-hover:right-10 rounded-full bg-white-50 transition-all duration-500;
     }
 
     .text {
-      @apply uppercase md:text-lg text-black transition-all duration-500
-        group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+      @apply uppercase md:text-lg text-black transition-all duration-500 group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
     }
 
     .arrow-wrapper {
-      @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 
-        -translate-y-1/2 flex justify-center items-center overflow-hidden;
+      @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 -translate-y-1/2 flex justify-center items-center overflow-hidden;
 
       img {
         @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
@@ -417,28 +423,22 @@ section {
 
   /* Fiverr badge shown on testimonial cards sourced from Fiverr */
   .fiverr-badge {
-    @apply inline-flex items-center gap-1 text-[11px] md:text-xs font-semibold
-      text-[#1dbf73] bg-[#1dbf73]/10 border border-[#1dbf73]/30
-      rounded-full px-2.5 py-1 w-fit;
+    @apply inline-flex items-center gap-1 text-[11px] md:text-xs font-semibold text-[#1dbf73] bg-[#1dbf73]/10 border border-[#1dbf73]/30 rounded-full px-2.5 py-1 w-fit;
   }
 
   /* "Hire Me on Fiverr" call-to-action button (Services section) */
   .fiverr-cta-btn {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4
-      rounded-lg bg-[#1dbf73] text-black font-semibold
-      hover:bg-[#19a463] transition-colors duration-300 cursor-pointer;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[#1dbf73] text-black font-semibold hover:bg-[#19a463] transition-colors duration-300 cursor-pointer;
   }
 
   /* Small tech-stack pills used on project case study cards */
   .tech-badge {
-    @apply text-xs font-medium text-white-50 bg-black-200
-      border border-black-50 rounded-full px-3 py-1;
+    @apply text-xs font-medium text-white-50 bg-black-200 border border-black-50 rounded-full px-3 py-1;
   }
 
   /* GitHub / LinkedIn icons shown in the desktop navbar */
   .navbar-social-icon {
-    @apply size-10 flex items-center justify-center rounded-full
-      border border-black-50 bg-black-100 transition-all duration-300;
+    @apply size-10 flex items-center justify-center rounded-full border border-black-50 bg-black-100 transition-all duration-300;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 
     img {
@@ -461,13 +461,10 @@ section {
   }
 
   .feature-card {
-    @apply relative flex flex-col items-start gap-3 rounded-2xl p-6
-      border border-black-50 transition-all duration-300;
-    background: linear-gradient(
-      180deg,
-      rgba(40, 39, 50, 0.55) 0%,
-      rgba(14, 14, 16, 0.55) 100%
-    );
+    @apply relative flex flex-col items-start gap-3 rounded-2xl p-6 border border-black-50 transition-all duration-300;
+    background: linear-gradient(180deg,
+        rgba(40, 39, 50, 0.55) 0%,
+        rgba(14, 14, 16, 0.55) 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -512,8 +509,7 @@ section {
       @apply flex items-center justify-center gap-5;
 
       .icon {
-        @apply border border-black-50 bg-black-100 flex justify-center items-center
-          rounded-full size-11 md:size-12 cursor-pointer transition-all duration-300;
+        @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-full size-11 md:size-12 cursor-pointer transition-all duration-300;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
       }
 
@@ -550,24 +546,31 @@ section {
   0% {
     transform: translateY(0.5%);
   }
+
   12.5% {
     transform: translateY(-12.5%);
   }
+
   25% {
     transform: translateY(-25%);
   }
+
   37.5% {
     transform: translateY(-37.5%);
   }
+
   50% {
     transform: translateY(-50%);
   }
+
   62.5% {
     transform: translateY(-62.5%);
   }
+
   75% {
     transform: translateY(-75%);
   }
+
   87.5% {
     transform: translateY(-87.5%);
   }
@@ -577,32 +580,27 @@ section {
 
 .gradient-line {
   width: 2px;
-  background: linear-gradient(
-    0deg,
-    rgba(69, 222, 196, 0) 0%,
-    #62e0ff 25%,
-    #52aeff 37.51%,
-    #fd5c79 62.83%,
-    #6d45ce 92.91%
-  );
+  background: linear-gradient(0deg,
+      rgba(69, 222, 196, 0) 0%,
+      #62e0ff 25%,
+      #52aeff 37.51%,
+      #fd5c79 62.83%,
+      #6d45ce 92.91%);
 }
 
 .gradient-edge:nth-of-type(1) {
   left: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
+
 .gradient-edge:nth-of-type(2) {
   right: 0;
-  background: linear-gradient(
-    -90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(-90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 /* marquee */
@@ -611,6 +609,7 @@ section {
   overflow: hidden;
   position: relative;
 }
+
 .marquee-box {
   display: flex;
   align-items: center;
@@ -620,17 +619,21 @@ section {
   overflow: hidden;
   animation: marquee 60s linear infinite;
 }
+
 .marquee-item {
   float: left;
 }
+
 @keyframes marquee {
   0% {
     left: 0;
   }
+
   100% {
     left: -100%;
   }
 }
+
 /* marquee end */
 
 .devops-hero-visual {
@@ -642,7 +645,8 @@ section {
   align-items: center;
   justify-content: center;
 }
- /* .devops-hero-visual {
+
+/* .devops-hero-visual {
   position: relative;
   width: 100%;
   height: 100%;
@@ -660,10 +664,29 @@ section {
   opacity: 0.5;
   pointer-events: none;
 }
-.devops-glow-1 { width: 260px; height: 260px; background: #4cc9f0; top: 10%; right: 10%; }
-.devops-glow-2 { width: 220px; height: 220px; background: #9d4edd; bottom: 5%; left: 5%; }
 
-.devops-pipeline-svg { width: 100%; max-width: 560px; height: auto; }
+.devops-glow-1 {
+  width: 260px;
+  height: 260px;
+  background: #4cc9f0;
+  top: 10%;
+  right: 10%;
+}
+
+.devops-glow-2 {
+  width: 220px;
+  height: 220px;
+  background: #9d4edd;
+  bottom: 5%;
+  left: 5%;
+}
+
+.devops-pipeline-svg {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+}
+
 /* .devops-pipeline-svg {
   width: 100%;
   height: 100%;
@@ -672,12 +695,38 @@ section {
   display: block;
 } */
 
-.node-ring { fill: none; stroke: #4cc9f0; stroke-width: 1.5; }
-.node-ring-accent { stroke: #a259ff; }
-.node-circle { fill: #0e0e10; stroke: #4cc9f0; stroke-width: 2; }
-.node-circle-accent { fill: #1c1c21; stroke: #a259ff; stroke-width: 2.5; }
-.node-icon { fill: #d9ecff; font-size: 16px; font-family: monospace; font-weight: 600; }
-.node-icon-lg { font-size: 24px; }
+.node-ring {
+  fill: none;
+  stroke: #4cc9f0;
+  stroke-width: 1.5;
+}
+
+.node-ring-accent {
+  stroke: #a259ff;
+}
+
+.node-circle {
+  fill: #0e0e10;
+  stroke: #4cc9f0;
+  stroke-width: 2;
+}
+
+.node-circle-accent {
+  fill: #1c1c21;
+  stroke: #a259ff;
+  stroke-width: 2.5;
+}
+
+.node-icon {
+  fill: #d9ecff;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.node-icon-lg {
+  font-size: 24px;
+}
 
 .devops-terminal {
   position: absolute;
@@ -690,15 +739,50 @@ section {
   padding: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-.devops-terminal-header { display: flex; gap: 6px; margin-bottom: 8px; }
-.dot { width: 8px; height: 8px; border-radius: 9999px; }
-.dot-red { background: #ff5f56; }
-.dot-yellow { background: #ffbd2e; }
-.dot-green { background: #27c93f; }
-.devops-terminal-lines p { font-family: monospace; font-size: 11px; color: #d9ecff; margin: 2px 0; }
-.prompt { color: #4cc9f0; margin-right: 4px; }
-.line-dim { color: #839cb5; }
-.line-success { color: #27c93f; }
+
+.devops-terminal-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.dot-red {
+  background: #ff5f56;
+}
+
+.dot-yellow {
+  background: #ffbd2e;
+}
+
+.dot-green {
+  background: #27c93f;
+}
+
+.devops-terminal-lines p {
+  font-family: monospace;
+  font-size: 11px;
+  color: #d9ecff;
+  margin: 2px 0;
+}
+
+.prompt {
+  color: #4cc9f0;
+  margin-right: 4px;
+}
+
+.line-dim {
+  color: #839cb5;
+}
+
+.line-success {
+  color: #27c93f;
+}
 
 .card {
   --start: 0;
@@ -721,12 +805,10 @@ section {
   background: var(--gradient);
   background-attachment: fixed;
   mask: linear-gradient(#0000, #0000),
-    conic-gradient(
-      from calc((var(--start) - 15) * 1deg),
+    conic-gradient(from calc((var(--start) - 15) * 1deg),
       #ffffff1f 0deg,
       white,
-      #ffffff00 100deg
-    );
+      #ffffff00 100deg);
   mask-composite: intersect;
   mask-clip: padding-box, border-box;
   opacity: 0;
