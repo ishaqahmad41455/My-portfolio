@@ -46,16 +46,16 @@ const counterItems = [
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/aws.png",
+    imgPath: "/images/logos/aws1.png",
   },
   {
-    imgPath: "/images/logos/azure.png",
+    imgPath: "/images/logos/azure1.png",
   },
   {
-    imgPath: "/images/logos/gcp.png",
+    imgPath: "/images/logos/gcp1.png",
   },
   {
-    imgPath: "/images/logos/docker.png",
+    imgPath: "/images/logos/Docker.png",
   },
   {
     imgPath: "/images/logos/Vercel.png",
@@ -64,16 +64,16 @@ const logoIconsList = [
     imgPath: "/images/logos/Microsoft.png",
   },
   {
-    imgPath: "/images/logos/terraform.png",
+    imgPath: "/images/logos/terraform1.png",
   },
   {
-    imgPath: "/images/logos/kubernetes.png",
+    imgPath: "/images/logos/kuberneties1.png",
   },
   {
-    imgPath: "/images/logos/jenkins.png",
+    imgPath: "/images/logos/jenkins1.png",
   },
   {
-    imgPath: "/images/logos/linux.png",
+    imgPath: "/images/logos/linux1.png",
   },
   {
     imgPath: "/images/logos/git.png",
