@@ -44,7 +44,7 @@ const AboutMe = () => {
                     </p>
 
                     <p className="text-white-50 md:text-lg leading-relaxed mt-5">
-                        I work across the complete software delivery lifecycle — from designing
+                        I work across the complete software delivery lifecycle from designing
                         and provisioning cloud infrastructure with Terraform, to building and
                         maintaining CI/CD pipelines using Jenkins, GitHub Actions, and Azure
                         DevOps. I containerize and orchestrate applications with Docker and
@@ -52,6 +52,15 @@ const AboutMe = () => {
                         GKE, Cloud Run, Azure App Service, Azure Storage, Azure Key Vault,
                         Azure Functions, Nginx, Apache, IIS, Ansible, SonarQube, Artifactory,
                         Prometheus, and Grafana.
+                    </p>
+
+                    <p className="text-white-50 md:text-lg leading-relaxed mt-5">
+                        Alongside my DevOps experience, I am currently expanding my expertise as a 
+                        Machine Learning Engineer Intern, where I am gaining practical experience in 
+                        machine learning concepts, data preprocessing, model development, and AI-powered 
+                        solutions. This experience complements my DevOps background by strengthening my 
+                        understanding of MLOps, automation for machine learning workflows, and the 
+                        deployment and management of AI applications in cloud environments.
                     </p>
 
                     <p className="text-white-50 md:text-lg leading-relaxed mt-5">
@@ -64,12 +73,12 @@ const AboutMe = () => {
                     </p>
 
                     <p className="text-white-50 md:text-lg leading-relaxed mt-5">
-                        Beyond infrastructure and pipelines, I enjoy solving complex technical
-                        problems and continuously exploring new technologies in cloud computing,
-                        DevOps, automation, Kubernetes, infrastructure as code, and machine
-                        learning. I believe that good engineering is not only about making
-                        systems work — it is about making them scalable, secure, maintainable,
-                        and easy for others to understand.
+                        I enjoy solving complex technical problems and continuously exploring 
+                        emerging technologies across cloud computing, DevOps, Kubernetes, Infrastructure
+                        as Code (IaC), automation, machine learning, artificial intelligence, and MLOps. 
+                        I believe that great engineering is not only about making systems work it is about 
+                        making them scalable, secure, maintainable, efficient, and easy for others to 
+                        understand.
                     </p>
 
                     <p className="text-white-50 md:text-lg leading-relaxed mt-5">
