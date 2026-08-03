@@ -119,7 +119,7 @@ I enjoy building scalable, secure, and automated infrastructure using Infrastruc
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/ishaqahmad41455/portfolio.git
 ```
 
 Navigate into the project
@@ -183,11 +183,11 @@ npm run preview
 
 **Ishaq Ahmad Khan**
 
-📧 Email: your-email@example.com
+📧 Email: ahmadishaq41455@gmail.com
 
-💼 LinkedIn: https://linkedin.com/in/your-profile
+💼 LinkedIn: https://www.linkedin.com/in/ishaq-ahmad-7922a61a0/
 
-🐙 GitHub: https://github.com/yourusername
+🐙 GitHub: https://github.com/ishaqahmad41455
 
 🌐 Portfolio: https://my-portfolio-khaki-nine-w2ccf51pp9.vercel.app/
 
