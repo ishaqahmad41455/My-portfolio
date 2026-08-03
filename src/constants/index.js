@@ -55,7 +55,7 @@ const logoIconsList = [
     imgPath: "/images/logos/gcp1.png",
   },
   {
-    imgPath: "/images/logos/docker.png",
+    imgPath: "/images/logos/Docker.png",
   },
   {
     imgPath: "/images/logos/Vercel.png",
