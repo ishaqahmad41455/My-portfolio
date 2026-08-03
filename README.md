@@ -1,142 +1,220 @@
-<div align="center">
-  <br />
-    <a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank">
-      <img src="public/images/readme.png" alt="Project Banner">
-    </a>
-  <br />
+# 🚀 DevOps Portfolio – Ishaq Ahmad Khan
 
-  <div>
-    <img src="https://img.shields.io/badge/-Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  </div>
+Welcome to my personal portfolio website! This portfolio showcases my experience, technical skills, certifications, projects, and DevOps expertise in Cloud, Infrastructure Automation, CI/CD, Kubernetes, and Monitoring.
 
-  <h3 align="center">Interactive 3D Portfolio Website</h3>
+🌐 **Live Demo:** https://my-portfolio-khaki-nine-w2ccf51pp9.vercel.app/
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+---
 
-## 📋 <a name="table">Table of Contents</a>
+## 👨‍💻 About Me
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets & Snippets](#links)
-6. 🚀 [More](#more)
+I'm **Ishaq Ahmad Khan**, a DevOps Engineer with 4+ years of experience designing, automating, and managing cloud infrastructure.
 
-## ⚠️ Tutorial
+My expertise includes:
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+- ☁️ AWS
+- ☁️ Microsoft Azure
+- ☁️ Google Cloud Platform (GCP)
+- 🐳 Docker
+- ☸️ Kubernetes
+- 🌍 Terraform
+- ⚙️ Jenkins
+- 🔄 GitHub Actions
+- 🔧 Ansible
+- 📊 Grafana
+- 📈 Prometheus
+- 🔍 ELK Stack
+- 🌐 Nginx
+- 🖥️ Linux Administration
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+I enjoy building scalable, secure, and automated infrastructure using Infrastructure as Code (IaC) and modern DevOps practices.
 
-<a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+---
 
-## <a name="introduction">🤖 Introduction</a>
+# ✨ Features
 
-The 3D Portfolio project is a highly engaging personal website that features animated 3D scenes, smooth camera transitions, interactive model showcases, and responsive design. It’s ideal for developers, designers, or freelancers looking to stand out in the digital crowd.
+- Modern 3D Developer Portfolio
+- Responsive Design
+- Interactive Animations
+- DevOps Tech Stack Showcase
+- Professional Experience Timeline
+- Project Showcase
+- Certifications Section
+- Resume Download
+- Contact Section
+- Social Media Integration
+- Optimized Performance
+- Mobile Friendly
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+---
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+# 🛠️ Tech Stack
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+
+### 3D & Animation
 
 - Three.js
 - React Three Fiber
 - Drei
 - GSAP
+
+### Styling
+
 - Tailwind CSS
-- Vite
-- React 19
 
-## <a name="features">🔋 Features</a>
+### Deployment
 
-### Features of the 3D Portfolio Project
+- Vercel
 
-👉 Animated 3D models and reveal animations
+---
 
-👉 Realistic lighting and shadows
+# ☁️ DevOps Skills
 
-👉 GSAP-powered scroll interactions
+- AWS
+- Microsoft Azure
+- Google Cloud Platform
+- Docker
+- Kubernetes
+- Terraform
+- Jenkins
+- GitHub Actions
+- Azure DevOps
+- Linux
+- Nginx
+- Prometheus
+- Grafana
+- SonarQube
+- Artifactory
+- Git
 
-👉 Responsive design with Tailwind CSS and Flexbox/Grid
+---
 
-👉 Micro Interactions
+# 📂 Project Structure
 
-👉 Multi-section layout (About, Projects, Contact)
-
-👉 Mobile optimized 3D experience
-
-and many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/3d-portfolio.git
-cd 3d-portfolio
+```text
+├── public/
+├── src/
+│   ├── components/
+│   ├── sections/
+│   ├── assets/
+│   ├── constants/
+│   ├── styles/
+│   └── App.jsx
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
-**Installation**
+---
 
-Install the project dependencies using npm:
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/portfolio.git
+```
+
+Navigate into the project
+
+```bash
+cd portfolio
+```
+
+Install dependencies
 
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
-
-```env
-VITE_APP_EMAILJS_SERVICE_ID=
-VITE_APP_EMAILJS_TEMPLATE_ID=
-VITE_APP_EMAILJS_PUBLIC_KEY=
-```
-
-Replace the placeholder values with your actual **[EmailJS](https://www.emailjs.com/)** credentials.
-
-**Running the Project**
+Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173/) in your browser to view the project.
+Build for production
 
+```bash
+npm run build
+```
 
-## <a name="links">🔗 Assets and Snippets</a>
+Preview production build
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/pfolio25-kit)**.
+```bash
+npm run preview
+```
 
-<a href="https://jsm.dev/pfolio25-kit" target="_blank">
-  <img src="public/images/readme-video-kit.png" alt="Video Kit Banner">
-</a>
+---
 
+# 📸 Portfolio Sections
 
-## <a name="more">🚀 More</a>
+- Hero
+- About Me
+- Skills
+- Experience
+- Certifications
+- Projects
+- Case Studies
+- Contact
 
-**Advance your skills with JSM Pro Courses**
+---
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+# 📜 Certifications
 
-<a href="https://beta.jsmastery.pro/" target="_blank">
-  <img src="public/images/readme-bottom.png" alt="Project Banner">
-</a>
+- AWS Certified Solutions Architect – Associate *(In Progress)*
+- Microsoft Azure
+- Google Cloud
+- Docker
+- Kubernetes
+- Terraform
+- DevOps Engineering
+
+---
+
+# 📬 Contact
+
+**Ishaq Ahmad Khan**
+
+📧 Email: your-email@example.com
+
+💼 LinkedIn: https://linkedin.com/in/your-profile
+
+🐙 GitHub: https://github.com/yourusername
+
+🌐 Portfolio: https://my-portfolio-khaki-nine-w2ccf51pp9.vercel.app/
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, and feedback are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push your branch
+5. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you like this project, please consider giving it a ⭐ on GitHub.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ by **Ishaq Ahmad Khan**
