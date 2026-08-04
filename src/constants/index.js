@@ -124,7 +124,7 @@ const techStackImgs = [
   },
   {
     name: "Docker",
-    imgPath: "/images/icons/docker.png",
+    imgPath: "/images/icons/Docker.png",
   },
   {
     name: "Git",
@@ -184,12 +184,30 @@ const techStackIcons = [
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
+  {
+    name: "Azure DevOps",
+    modelPath: "/models/glbfiles/azure-devops-transformed.glb",
+    scale: 0.8,
+    rotation: [0, 0, 0],
+  }, 
+  {
+    name: "Grafana",
+    modelPath: "/models/glbfiles/grafana-transformed.glb",
+    scale: 0.8,
+    rotation: [0, 0, 0],
+  },  
   // {
-  //   name: "Grafana",
-  //   modelPath: "/models/glbfiles/grafana_logo.glb",
+  //   name: "Machine Learning",
+  //   modelPath: "/models/glbfiles/machine-learning-transformed.glb",
   //   scale: 0.8,
   //   rotation: [0, 0, 0],
-  // },
+  // },  
+  {
+    name: "Data Analytics",
+    modelPath: "/models/glbfiles/data-analysis-transformed.glb",
+    scale: 0.8,
+    rotation: [0, 0, 0],
+  },        
 ];
 
 const expCards = [

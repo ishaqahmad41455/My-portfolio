@@ -171,11 +171,11 @@ npm run preview
 
 - AWS Certified Solutions Architect – Associate *(In Progress)*
 - Microsoft Azure
-- Google Cloud
-- Docker
-- Kubernetes
-- Terraform
-- DevOps Engineering
+<!-- - Google Cloud
+<!-- - Docker -->
+<!-- - Kubernetes --> -->
+<!-- - Terraform -->
+<!-- - DevOps Engineering -->
 
 ---
 
