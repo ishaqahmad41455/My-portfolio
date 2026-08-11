@@ -288,6 +288,35 @@ const certifications = [
     date: "2026",
     imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
+  },
+  // --- new Google Cloud Skill Badges ---
+  {
+    title: "Implement Cloud Security Fundamentals on Google Cloud",
+    issuer: "Google Cloud",
+    date: "Aug 2026",
+    imgPath: "/images/Icons/gcp_bagde.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/3d7676cc-e366-4970-88f9-0262ffcc4998",
+  },
+  {
+    title: "Implementing Cloud Load Balancing for Compute Engine",
+    issuer: "Google Cloud",
+    date: "Aug 2026",
+    imgPath: "/images/Icons/gcp_bagde.png",
+    credentialUrl: "https://www.credly.com/badges/43cdbe76-c20e-4ce2-bd75-273431d6c415",
+  },
+  {
+    title: "Manage Kubernetes in Google Cloud",
+    issuer: "Google Cloud",
+    date: "Aug 2026",
+    imgPath: "/images/Icons/gcp_bagde.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/a479ce08-c19c-4e8d-bb88-22a4bc6256ec",
+  },
+  {
+    title: "Make Advanced - API calls with HTTP modules",
+    issuer: "Make",
+    date: "May 2024",
+    imgPath: "/images/Icons/make.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/9a6bf5c4-dc0d-4417-910a-bbc28ac6b94b",
   }
   // {
   //   title: "Certified Kubernetes Administrator (CKA)",

@@ -7,6 +7,7 @@ import ContactExperience from "../components/models/contact/ContactExperience";
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // "success" | "error" | null
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,7 +21,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
+    setStatus(null);
 
     try {
       await emailjs.sendForm(
@@ -30,12 +32,15 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
+      setStatus("success");
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
+      setStatus("error");
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
+      // auto-hide the status message after a few seconds
+      setTimeout(() => setStatus(null), 5000);
     }
   };
 
@@ -93,7 +98,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -104,6 +109,17 @@ const Contact = () => {
                     </div>
                   </div>
                 </button>
+
+                {status === "success" && (
+                  <p className="text-green-400 text-sm text-center">
+                    ✅ Message sent successfully! I'll get back to you soon.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-400 text-sm text-center">
+                    ❌ Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
               </form>
             </div>
           </div>
