@@ -3,7 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import TitleHeader from "../components/TitleHeader";
-import { services, fiverrUrl } from "../constants";
+// import { services, fiverrUrl } from "../constants";
+import { services, fiverrUrl, upworkUrl } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +56,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="flex-center mt-14">
+        <div className="flex-center mt-14 gap-4 flex-wrap">
           <a
             href={fiverrUrl}
             target="_blank"
@@ -63,6 +64,15 @@ const Services = () => {
             className="fiverr-cta-btn"
           >
             Hire Me on Fiverr
+          </a>
+
+          <a
+          href={upworkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="upwork-cta-btn"
+          >
+            Hire Me on Upwork
           </a>
         </div>
       </div>

@@ -481,6 +481,10 @@ const fiverrUrl = "https://www.fiverr.com/ishaqahmad745";
 
 // EDIT ME: replace client reviews with your real Fiverr reviews.
 // `source: "fiverr"` shows the green "Fiverr Client" badge on the card.
+
+// EDIT ME: put your real Upwork profile URL here.
+const upworkUrl = "https://www.upwork.com/freelancers/~016a6d1ae7719b63f6";
+
 const testimonials = [
   {
     name: "Bryn Thomas",
@@ -573,6 +577,7 @@ export {
   caseStudies,
   services,
   fiverrUrl,
+  upworkUrl,
   testimonials,
   socialImgs,
   techStackIcons,
