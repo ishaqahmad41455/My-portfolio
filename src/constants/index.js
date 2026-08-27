@@ -189,25 +189,25 @@ const techStackIcons = [
     modelPath: "/models/glbfiles/azure-devops-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
-  }, 
+  },
   {
     name: "Grafana",
     modelPath: "/models/glbfiles/grafana-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
-  },  
+  },
   // {
   //   name: "Machine Learning",
   //   modelPath: "/models/glbfiles/machine-learning-transformed.glb",
   //   scale: 0.8,
   //   rotation: [0, 0, 0],
-  // },  
+  // },
   {
     name: "Data Analytics",
     modelPath: "/models/glbfiles/data-analysis-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
-  },        
+  },
 ];
 
 const expCards = [
@@ -274,11 +274,14 @@ const expLogos = [
 ];
 
 // EDIT ME: replace with your real certifications. Remove entries you don't hold.
+// `level` drives the Beginner / Intermediate / Advanced filter on the
+// Certifications section — set it to whichever tier best matches the cert.
 const certifications = [
   {
     title: "AWS Certified Solutions Architect – Associate",
     issuer: "Amazon Web Services",
     date: "2026",
+    level: "Intermediate",
     imgPath: "/images/Icons/aws_cer1.png",
     credentialUrl: "#",
   },
@@ -286,6 +289,7 @@ const certifications = [
     title: "Microsoft Certified: DevOps Engineer Expert",
     issuer: "Microsoft",
     date: "2026",
+    level: "Advanced",
     imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
   },
@@ -294,6 +298,7 @@ const certifications = [
     title: "Implement Cloud Security Fundamentals on Google Cloud",
     issuer: "Google Cloud",
     date: "Aug 2026",
+    level: "Beginner",
     imgPath: "/images/Icons/gcp_bagde.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/3d7676cc-e366-4970-88f9-0262ffcc4998",
   },
@@ -301,6 +306,7 @@ const certifications = [
     title: "Implementing Cloud Load Balancing for Compute Engine",
     issuer: "Google Cloud",
     date: "Aug 2026",
+    level: "Intermediate",
     imgPath: "/images/Icons/gcp_bagde.png",
     credentialUrl: "https://www.credly.com/badges/43cdbe76-c20e-4ce2-bd75-273431d6c415",
   },
@@ -308,6 +314,7 @@ const certifications = [
     title: "Manage Kubernetes in Google Cloud",
     issuer: "Google Cloud",
     date: "Aug 2026",
+    level: "Intermediate",
     imgPath: "/images/Icons/gcp_bagde.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/a479ce08-c19c-4e8d-bb88-22a4bc6256ec",
   },
@@ -315,6 +322,7 @@ const certifications = [
     title: "Make Advanced - API calls with HTTP modules",
     issuer: "Make",
     date: "May 2024",
+    level: "Advanced",
     imgPath: "/images/Icons/make.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/9a6bf5c4-dc0d-4417-910a-bbc28ac6b94b",
   }
@@ -322,6 +330,7 @@ const certifications = [
   //   title: "Certified Kubernetes Administrator (CKA)",
   //   issuer: "The Linux Foundation / CNCF",
   //   date: "2025",
+  //   level: "Advanced",
   //   imgPath: "/images/logos/kubernetes.png",
   //   credentialUrl: "#",
   // },
@@ -329,6 +338,7 @@ const certifications = [
   //   title: "HashiCorp Certified: Terraform Associate",
   //   issuer: "HashiCorp",
   //   date: "2025",
+  //   level: "Intermediate",
   //   imgPath: "/images/logos/terraform.png",
   //   credentialUrl: "#",
   // },
@@ -336,10 +346,13 @@ const certifications = [
 
 // EDIT ME: replace with your real projects. imgPath should point to an
 // architecture diagram or screenshot placed in public/images/projects/.
+// `category` drives the filter bar on the Projects section — each project
+// can belong to more than one category (e.g. ["Azure", "CI/CD"]).
 const caseStudies = [
   {
     title: "End-to-End CI/CD for Multi-Environment .NET Applications",
     imgPath: "/images/projects/case-study-1.png",
+    category: ["Azure", "CI/CD"],
     stack: [
       "Azure DevOps",
       "Azure Repos",
@@ -360,6 +373,7 @@ const caseStudies = [
   {
     title: "GCP Cloud Infrastructure Automation with Terraform",
     imgPath: "/images/projects/case-study-2.png",
+    category: ["GCP", "Automation", "Database"],
     stack: [
       "Google Cloud Platform",
       "Terraform",
@@ -382,6 +396,7 @@ const caseStudies = [
   {
     title: "Production Application Deployment & Database Migration to Azure",
     imgPath: "/images/projects/case-study-3.png",
+    category: ["Azure", "Database", "Automation"],
     stack: [
       "Azure VM",
       "PostgreSQL",
@@ -403,6 +418,7 @@ const caseStudies = [
   {
     title: "AWS Production Deployment & Automated Backup Architecture",
     imgPath: "/images/projects/case-study-4.png",
+    category: ["CI/CD", "Automation"],
     stack: [
       "AWS EC2",
       "Docker Compose",
@@ -423,6 +439,7 @@ const caseStudies = [
   {
     title: "TechMetaScore — AWS Deployment & MongoDB Operations",
     imgPath: "/images/projects/case-study-5.png",
+    category: ["Database", "Automation"],
     stack: [
       "AWS EC2",
       "Docker Compose",

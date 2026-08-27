@@ -66,16 +66,20 @@ const NavBar = () => {
           <span className="logo-text">Ishaq Ahmad Khan</span>
         </a>
 
+        {/* Nav links rendered as a rounded capsule, with the active link
+            shown as a solid highlighted pill (see .nav-pill-group in
+            index.css). */}
         <nav className="desktop">
-          <ul>
+          <ul className="nav-pill-group">
             {navLinks.map(({ link, name }) => (
               <li
                 key={name}
-                className={`group ${activeLink === link ? "active" : ""}`}
+                className={`nav-pill-item group ${
+                  activeLink === link ? "active" : ""
+                }`}
               >
                 <a href={link}>
                   <span>{name}</span>
-                  <span className="underline" />
                 </a>
               </li>
             ))}

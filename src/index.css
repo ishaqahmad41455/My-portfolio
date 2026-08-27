@@ -205,45 +205,36 @@ section {
       transform: translateY(-1px);
     }
 
-    /* Desktop nav links ---------------------------------------------- */
+    /* Desktop nav links, styled as a rounded capsule with the active
+       link shown as a solid highlighted pill (see NavBar.jsx). ------- */
     nav.desktop {
       @apply hidden lg:flex items-center;
 
-      ul {
-        @apply flex items-center gap-10 xl:gap-12;
+      .nav-pill-group {
+        @apply flex items-center gap-1 xl:gap-1.5 bg-black-200/60 border border-black-50 rounded-full p-1.5;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
 
-        li {
-          @apply text-white-50 relative py-1;
+      .nav-pill-item {
+        @apply relative;
 
-          span:first-child {
-            @apply transition-colors duration-300 text-sm xl:text-base tracking-wide;
-          }
+        a {
+          @apply block px-4 xl:px-5 py-2 rounded-full text-sm xl:text-base text-white-50 tracking-wide transition-all duration-300;
+        }
 
-          .underline {
-            @apply absolute -bottom-1 left-0 w-0 h-[2px] rounded-full transition-all duration-300 ease-out;
-            background: linear-gradient(90deg,
-                var(--accent-blue),
-                var(--accent-violet));
-            box-shadow: 0 0 10px rgba(162, 89, 255, 0.6);
-          }
+        &:hover a {
+          @apply text-white;
+        }
 
-          &:hover span:first-child {
-            @apply text-white;
-          }
-
-          &:hover .underline {
-            @apply w-full;
-          }
-
-          /* Active section, driven by scroll position (see NavBar.jsx) */
-          &.active span:first-child {
-            color: #fff;
-            text-shadow: 0 0 14px rgba(76, 201, 240, 0.45);
-          }
-
-          &.active .underline {
-            @apply w-full;
-          }
+        /* Active section, driven by scroll position (see NavBar.jsx) */
+        &.active a {
+          color: #fff;
+          background: linear-gradient(135deg,
+              var(--accent-blue),
+              var(--accent-purple),
+              var(--accent-violet));
+          box-shadow: 0 4px 16px rgba(162, 89, 255, 0.4);
         }
       }
     }
@@ -651,17 +642,6 @@ section {
   justify-content: center;
 }
 
-/* .devops-hero-visual {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-} */
-
 .devops-glow {
   position: absolute;
   border-radius: 9999px;
@@ -691,14 +671,6 @@ section {
   max-width: 560px;
   height: auto;
 }
-
-/* .devops-pipeline-svg {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: contain;
-  display: block;
-} */
 
 .node-ring {
   fill: none;
@@ -834,4 +806,92 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* ===================================================================
+   Filter tabs — used by the Projects category filter and the
+   Certifications level filter. Pill buttons styled to match the
+   existing dark card/accent-gradient language used across the site.
+   =================================================================== */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.filter-tab {
+  @apply px-5 py-2.5 rounded-full text-sm md:text-base font-medium text-white-50 bg-black-200 border border-black-50 cursor-pointer transition-all duration-300;
+}
+
+.filter-tab:hover {
+  @apply text-white;
+  border-color: rgba(76, 201, 240, 0.45);
+  transform: translateY(-2px);
+}
+
+.filter-tab-active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg,
+      var(--accent-blue),
+      var(--accent-purple),
+      var(--accent-violet));
+  box-shadow: 0 6px 20px rgba(162, 89, 255, 0.35);
+}
+
+.filter-tab-active:hover {
+  transform: translateY(-2px);
+}
+
+/* Small category chips shown on each project case-study card */
+.category-badge {
+  @apply inline-flex items-center text-[11px] md:text-xs font-semibold rounded-full px-2.5 py-1 w-fit;
+  color: var(--accent-blue);
+  background: rgba(76, 201, 240, 0.1);
+  border: 1px solid rgba(76, 201, 240, 0.3);
+}
+
+/* Level badge shown in the corner of each certification card */
+.level-badge {
+  @apply absolute top-5 right-5 text-[11px] md:text-xs font-semibold rounded-full px-3 py-1 w-fit;
+}
+
+.level-badge-beginner {
+  color: #27c93f;
+  background: rgba(39, 201, 63, 0.12);
+  border: 1px solid rgba(39, 201, 63, 0.35);
+}
+
+.level-badge-intermediate {
+  color: var(--accent-blue);
+  background: rgba(76, 201, 240, 0.12);
+  border: 1px solid rgba(76, 201, 240, 0.35);
+}
+
+.level-badge-advanced {
+  color: var(--accent-violet);
+  background: rgba(162, 89, 255, 0.14);
+  border: 1px solid rgba(162, 89, 255, 0.4);
+}
+
+/* "Read more / Read less" toggle used on the project case-study cards */
+.read-more-btn {
+  @apply inline-flex items-center gap-1 text-xs font-semibold tracking-wide uppercase cursor-pointer transition-colors duration-300 mt-1 w-fit;
+  color: var(--accent-blue);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  color: var(--accent-violet);
+}
+
+.read-more-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
