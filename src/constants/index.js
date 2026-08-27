@@ -282,6 +282,8 @@ const certifications = [
     issuer: "Amazon Web Services",
     date: "2026",
     level: "Intermediate",
+    description:
+      "Validates the ability to design available, cost-efficient, fault-tolerant, and scalable distributed systems on AWS.",
     imgPath: "/images/Icons/aws_cer1.png",
     credentialUrl: "#",
   },
@@ -290,6 +292,8 @@ const certifications = [
     issuer: "Microsoft",
     date: "2026",
     level: "Advanced",
+    description:
+      "Covers designing and implementing DevOps practices for planning, development, delivery, and operations on Azure.",
     imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
   },
@@ -299,31 +303,39 @@ const certifications = [
     issuer: "Google Cloud",
     date: "Aug 2026",
     level: "Beginner",
-    imgPath: "/images/Icons/gcp_bagde.png",
-    credentialUrl: "https://www.credly.com/earner/earned/badge/3d7676cc-e366-4970-88f9-0262ffcc4998",
+    description:
+      "Hands-on badge covering IAM, resource hierarchy, and core security controls for protecting workloads on Google Cloud.",
+    imgPath: "/images/Icons/implement-cloud-security-fundamentals-on-google.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/a479ce08-c19c-4e8d-bb88-22a4bc6256ec",
   },
   {
     title: "Implementing Cloud Load Balancing for Compute Engine",
     issuer: "Google Cloud",
     date: "Aug 2026",
     level: "Intermediate",
-    imgPath: "/images/Icons/gcp_bagde.png",
-    credentialUrl: "https://www.credly.com/badges/43cdbe76-c20e-4ce2-bd75-273431d6c415",
+    description:
+      "Hands-on badge covering HTTP(S), TCP/SSL, and network load balancing configurations for Compute Engine workloads.",
+    imgPath: "/images/Icons/implement-load-balancing-on-compute-engine-skill.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/43cdbe76-c20e-4ce2-bd75-273431d6c415",
   },
   {
     title: "Manage Kubernetes in Google Cloud",
     issuer: "Google Cloud",
     date: "Aug 2026",
     level: "Intermediate",
-    imgPath: "/images/Icons/gcp_bagde.png",
-    credentialUrl: "https://www.credly.com/earner/earned/badge/a479ce08-c19c-4e8d-bb88-22a4bc6256ec",
+    description:
+      "Hands-on badge covering GKE cluster management, workload deployment, and day-2 operations on Google Cloud.",
+    imgPath: "/images/Icons/manage-kubernetes-in-google-cloud-skill-badge.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/3d7676cc-e366-4970-88f9-0262ffcc4998",
   },
   {
     title: "Make Advanced - API calls with HTTP modules",
     issuer: "Make",
     date: "May 2024",
     level: "Advanced",
-    imgPath: "/images/Icons/make.png",
+    description:
+      "Advanced coursework on building custom API integrations and authentication flows using Make's HTTP modules.",
+    imgPath: "/images/Icons/MakeCertificate.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/9a6bf5c4-dc0d-4417-910a-bbc28ac6b94b",
   }
   // {
@@ -331,6 +343,7 @@ const certifications = [
   //   issuer: "The Linux Foundation / CNCF",
   //   date: "2025",
   //   level: "Advanced",
+  //   description: "",
   //   imgPath: "/images/logos/kubernetes.png",
   //   credentialUrl: "#",
   // },
@@ -339,6 +352,7 @@ const certifications = [
   //   issuer: "HashiCorp",
   //   date: "2025",
   //   level: "Intermediate",
+  //   description: "",
   //   imgPath: "/images/logos/terraform.png",
   //   credentialUrl: "#",
   // },

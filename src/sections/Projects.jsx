@@ -8,16 +8,9 @@ import { caseStudies } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Order controls how the tabs are displayed. "All" always leads.
 const FILTERS = ["All", "Azure", "GCP", "CI/CD", "Database", "Automation"];
+const PREVIEW_LENGTH = 100;
 
-// Character budget shown per Problem/Solution/Impact block before it's
-// clipped and a "Read more" toggle appears. Tuned so most short blurbs
-// never show the toggle at all.
-const PREVIEW_LENGTH = 120;
-
-// Cuts text at the nearest word boundary at-or-before `max` so we never
-// chop a word in half.
 const truncate = (text, max) => {
   if (!text || text.length <= max) return text;
   const clipped = text.slice(0, max);
@@ -43,30 +36,96 @@ const ChevronIcon = () => (
   </svg>
 );
 
-// One Problem / Solution / Impact block. Collapses to PREVIEW_LENGTH
-// characters and reveals a "Read more" toggle only when the full text
-// is actually longer than the preview.
-const ExpandableField = ({ label, text }) => {
+const ProjectCard = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
-  const needsToggle = text && text.length > PREVIEW_LENGTH;
+  const preview = project.problem;
+  const needsToggle = preview && preview.length > PREVIEW_LENGTH;
 
   return (
-    <div>
-      <p className="text-blue-50 italic">{label}</p>
-      <p className="text-white-50">
-        {expanded || !needsToggle ? text : truncate(text, PREVIEW_LENGTH)}
-      </p>
-      {needsToggle && (
-        <button
-          type="button"
-          className="read-more-btn"
-          aria-expanded={expanded}
-          onClick={() => setExpanded((prev) => !prev)}
-        >
-          {expanded ? "Read less" : "Read more"}
-          <ChevronIcon />
-        </button>
-      )}
+    <div className="rounded-xl overflow-hidden flex flex-col bg-[#1a1a2e] border border-[#2a2a4a] hover:border-[#3a3a6a] transition-all duration-300">
+      {/* Thumbnail - using object-contain with reduced height and centered */}
+      <div className="relative w-full h-[160px] overflow-hidden bg-[#0f0f1a] flex items-center justify-center">
+        <img
+          src={project.imgPath}
+          alt={project.title}
+          className="w-full h-full object-contain p-2"
+        />
+        {project.category?.[0] && (
+          <span className="absolute top-3 left-3 px-3 py-1 text-[10px] font-semibold rounded-full uppercase tracking-wider bg-black/60 backdrop-blur-sm text-white border border-white/10">
+            {project.category[0]}
+          </span>
+        )}
+      </div>
+
+      <div className="p-4 flex flex-col gap-2 flex-1">
+        <h3 className="text-white text-sm font-semibold leading-snug line-clamp-2">
+          {project.title}
+        </h3>
+
+        <div className="text-xs">
+          {!expanded ? (
+            <p className="text-gray-400 leading-relaxed">{truncate(preview, PREVIEW_LENGTH)}</p>
+          ) : (
+            <div className="flex flex-col gap-2">
+              <div>
+                <p className="text-blue-400 text-[10px] font-semibold uppercase tracking-wider">Problem</p>
+                <p className="text-gray-400 text-xs leading-relaxed">{project.problem}</p>
+              </div>
+              <div>
+                <p className="text-blue-400 text-[10px] font-semibold uppercase tracking-wider">Solution</p>
+                <p className="text-gray-400 text-xs leading-relaxed">{project.solution}</p>
+              </div>
+              <div>
+                <p className="text-blue-400 text-[10px] font-semibold uppercase tracking-wider">Impact</p>
+                <p className="text-gray-400 text-xs leading-relaxed">{project.impact}</p>
+              </div>
+            </div>
+          )}
+
+          {needsToggle && (
+            <button
+              type="button"
+              className="text-blue-400 hover:text-blue-300 text-xs font-medium inline-flex items-center gap-1 mt-1"
+              aria-expanded={expanded}
+              onClick={() => setExpanded((prev) => !prev)}
+            >
+              {expanded ? "Read less" : "Read more"}
+              <ChevronIcon />
+            </button>
+          )}
+        </div>
+
+        <div className="flex flex-wrap gap-1.5 mt-1">
+          {project.stack.map((tech) => (
+            <span key={tech} className="text-[10px] text-gray-500 bg-[#252545] px-2 py-0.5 rounded-full">
+              #{tech.replace(/\s+/g, "")}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-4 mt-2 pt-2 border-t border-[#2a2a4a]">
+          {project.repoLink && project.repoLink !== "#" && (
+            <a
+              href={project.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white text-xs transition-colors underline underline-offset-2"
+            >
+              View code
+            </a>
+          )}
+          {project.liveLink && project.liveLink !== "#" && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white text-xs transition-colors underline underline-offset-2"
+            >
+              Live link
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -100,8 +159,6 @@ const Projects = () => {
     });
   }, []);
 
-  // Re-run a quick fade-in whenever the filter changes so newly shown
-  // cards don't just pop in without any transition.
   useGSAP(() => {
     gsap.fromTo(
       ".case-study-card",
@@ -111,101 +168,44 @@ const Projects = () => {
   }, [activeFilter]);
 
   return (
-    <section id="case-studies" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader
-          title="Featured DevOps Projects"
-          sub="🚀 Real problems, real infrastructure"
-        />
+    <section id="case-studies" className="py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+              Featured DevOps Projects
+            </h2>
+            <p className="text-gray-400 text-sm">🚀 Real problems, real infrastructure</p>
+          </div>
 
-        {/* Category filter tabs */}
-        <div className="filter-tabs mt-12" role="tablist" aria-label="Filter projects by category">
-          {FILTERS.map((filter) => (
-            <button
-              key={filter}
-              type="button"
-              role="tab"
-              aria-selected={activeFilter === filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`filter-tab ${
-                activeFilter === filter ? "filter-tab-active" : ""
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
+          <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Filter projects by category">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                  activeFilter === filter
+                    ? "bg-blue-600 text-white"
+                    : "bg-[#1a1a2e] border border-[#2a2a4a] text-gray-400 hover:text-white hover:border-[#4a4a7a]"
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
         </div>
 
         {filteredCaseStudies.length === 0 ? (
-          <p className="text-white-50 text-center mt-16">
+          <p className="text-gray-400 text-center mt-16">
             No projects in this category yet — check back soon.
           </p>
         ) : (
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredCaseStudies.map((project) => (
-              <div
-                key={project.title}
-                className="case-study-card card-border rounded-xl overflow-hidden flex flex-col"
-              >
-                <div className="w-full bg-black-200 overflow-hidden">
-                  <img
-                    src={project.imgPath}
-                    alt={project.title}
-                    className="w-full h-auto block"
-                  />
-                </div>
-
-                <div className="p-6 flex flex-col gap-4 flex-1">
-                  <div className="flex flex-wrap gap-2">
-                    {project.category?.map((cat) => (
-                      <span key={cat} className="category-badge">
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h3 className="text-white text-xl font-semibold">
-                    {project.title}
-                  </h3>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <span key={tech} className="tech-badge">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-col gap-3 text-sm">
-                    <ExpandableField label="Problem" text={project.problem} />
-                    <ExpandableField label="Solution" text={project.solution} />
-                    <ExpandableField label="Impact" text={project.impact} />
-                  </div>
-
-                  <div className="flex gap-4 mt-auto pt-2">
-                    {project.repoLink && project.repoLink !== "#" && (
-                      <a
-                        href={project.repoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white-50 underline underline-offset-4 hover:text-white transition-colors text-sm"
-                      >
-                        View code
-                      </a>
-                    )}
-                    {project.liveLink && project.liveLink !== "#" && (
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white-50 underline underline-offset-4 hover:text-white transition-colors text-sm"
-                      >
-                        Live link
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         )}

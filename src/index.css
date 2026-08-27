@@ -846,9 +846,9 @@ section {
 
 /* Small category chips shown on each project case-study card */
 .category-badge {
-  @apply inline-flex items-center text-[11px] md:text-xs font-semibold rounded-full px-2.5 py-1 w-fit;
+  @apply inline-flex items-center text-[10px] md:text-[11px] font-semibold rounded-full px-2.5 py-1 w-fit;
   color: var(--accent-blue);
-  background: rgba(76, 201, 240, 0.1);
+  background: rgba(76, 201, 240, 0.15);
   border: 1px solid rgba(76, 201, 240, 0.3);
 }
 
@@ -894,4 +894,109 @@ section {
 
 .read-more-btn[aria-expanded="true"] svg {
   transform: rotate(180deg);
+}
+
+/* ===================================================================
+   Certifications redesign — dropdown tier filter, thumbnail overlay
+   badge, verified/view-live row, and pagination controls.
+   =================================================================== */
+
+/* Tier dropdown (native <select>, custom-skinned to match the dark
+   theme; the browser's default arrow is hidden and replaced with the
+   FaChevronDown icon rendered next to it). */
+.filter-select {
+  @apply appearance-none bg-black-200 border border-black-50 text-white-50 text-sm rounded-full pl-5 pr-10 py-2.5 cursor-pointer transition-colors duration-300;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  @apply text-white outline-none;
+  border-color: rgba(76, 201, 240, 0.45);
+}
+
+.filter-select-chevron {
+  @apply absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white-50;
+  font-size: 0.7rem;
+}
+
+/* Certificate thumbnail — light backdrop so transparent-background
+   badge/logo art reads cleanly, matching the "framed certificate"
+   look of the reference layout. */
+.cert-thumb {
+  @apply relative w-full h-36 flex items-center justify-center overflow-hidden;
+  background: #eef0f3;
+}
+
+.cert-thumb img {
+  @apply w-full h-full object-contain p-6;
+}
+
+/* Project case-study thumbnail — same light-backdrop treatment as
+   .cert-thumb, so diagram screenshots (usually white-background
+   exports) sit on a matching light card instead of floating on black
+   with hard letterbox bars. */
+.project-thumb {
+  background: #eef0f3;
+}
+
+.project-thumb img {
+  padding: 0.75rem;
+}
+
+/* Level pill overlaid on the thumbnail (reuses the same color
+   modifiers as the older .level-badge, just positioned differently). */
+.level-badge-overlay {
+  @apply absolute top-3 right-3 text-[11px] font-semibold rounded-full px-3 py-1 w-fit backdrop-blur-sm;
+}
+
+/* "View Live" button on each certification card */
+.view-live-btn {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold text-white-50 border border-black-50 rounded-full px-3 py-1.5 transition-all duration-300;
+}
+
+.view-live-btn:hover {
+  @apply text-white;
+  border-color: rgba(76, 201, 240, 0.5);
+  background: rgba(76, 201, 240, 0.08);
+}
+
+/* Pagination */
+.pagination-btn {
+  @apply flex items-center justify-center size-9 rounded-lg text-sm font-medium text-white-50 bg-black-200 border border-black-50 cursor-pointer transition-all duration-300;
+}
+
+.pagination-btn:hover {
+  @apply text-white;
+  border-color: rgba(76, 201, 240, 0.45);
+}
+
+.pagination-btn-active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg,
+      var(--accent-blue),
+      var(--accent-purple),
+      var(--accent-violet));
+  box-shadow: 0 4px 14px rgba(162, 89, 255, 0.35);
+}
+
+.pagination-arrow {
+  @apply flex items-center justify-center size-9 rounded-lg text-white-50 bg-black-200 border border-black-50 cursor-pointer transition-all duration-300;
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  @apply text-white;
+  border-color: rgba(76, 201, 240, 0.45);
+}
+
+.pagination-arrow:disabled {
+  @apply opacity-30 cursor-not-allowed;
+}
+
+/* Hashtag-style tag chips used on the project case-study cards */
+.hashtag-badge {
+  @apply text-[10px] font-medium rounded-full px-2.5 py-1;
+  color: var(--accent-violet);
+  background: rgba(162, 89, 255, 0.1);
+  border: 1px solid rgba(162, 89, 255, 0.28);
 }
