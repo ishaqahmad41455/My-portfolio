@@ -7,6 +7,8 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   // track which section is currently in view, so we can highlight the matching link
   const [activeLink, setActiveLink] = useState(navLinks[0]?.link ?? "");
+  // track whether the mobile nav panel is open
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     // create an event listener for when the user scrolls
@@ -54,6 +56,23 @@ const NavBar = () => {
     return () => observer.disconnect();
   }, []);
 
+  // close the mobile panel automatically once the viewport grows back to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   // only show GitHub + LinkedIn in the navbar (Footer shows the full social list)
   const navSocials = socialImgs.filter(
     (social) => social.name === "github" || social.name === "linkedin"
@@ -62,7 +81,7 @@ const NavBar = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-        <a href="#hero" className="logo">
+        <a href="#hero" className="logo" onClick={() => setMobileOpen(false)}>
           <span className="logo-text">Ishaq Ahmad Khan</span>
         </a>
 
@@ -86,7 +105,7 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
           <div className="hidden md:flex items-center gap-3">
             {navSocials.map((social) => (
               <a
@@ -102,7 +121,64 @@ const NavBar = () => {
             ))}
           </div>
 
-          <a href="#contact" className="contact-btn group">
+          <a href="#contact" className="contact-btn group hidden sm:flex">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+
+          {/* Mobile hamburger — only visible below the lg breakpoint, where
+              the pill nav is hidden. */}
+          <button
+            type="button"
+            className={`mobile-menu-btn lg:hidden ${mobileOpen ? "is-open" : ""}`}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((prev) => !prev)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile nav panel */}
+      <div className={`mobile-menu-panel lg:hidden ${mobileOpen ? "open" : ""}`}>
+        <ul className="mobile-menu-links">
+          {navLinks.map(({ link, name }) => (
+            <li key={name}>
+              <a
+                href={link}
+                className={activeLink === link ? "active" : ""}
+                onClick={() => setMobileOpen(false)}
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mobile-menu-footer">
+          <div className="flex items-center gap-3">
+            {navSocials.map((social) => (
+              <a
+                key={social.name}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-social-icon"
+                aria-label={social.name}
+              >
+                <img src={social.imgPath} alt={social.name} />
+              </a>
+            ))}
+          </div>
+          <a
+            href="#contact"
+            className="contact-btn group"
+            onClick={() => setMobileOpen(false)}
+          >
             <div className="inner">
               <span>Contact me</span>
             </div>

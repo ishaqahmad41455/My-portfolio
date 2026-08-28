@@ -27,33 +27,36 @@ const truncate = (text, max) => {
   return `${clipped.slice(0, lastSpace > 0 ? lastSpace : max)}…`;
 };
 
-const CertCard = ({ cert }) => {
+const CertCard = ({ cert, index }) => {
   const [expanded, setExpanded] = useState(false);
   const needsToggle = cert.description && cert.description.length > PREVIEW_LENGTH;
   const hasLiveCredential = cert.credentialUrl && cert.credentialUrl !== "#";
 
   return (
-    <div className="rounded-xl overflow-hidden flex flex-col bg-[#1a1a2e] border border-[#2a2a4a] hover:border-[#3a3a6a] transition-all duration-300">
+    <div 
+      className="cert-card rounded-xl overflow-hidden flex flex-col bg-[#1a1a2e] border border-[#2a2a4a] hover:border-blue-400/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/10"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
       {/* Thumbnail - using object-contain with proper sizing */}
       <div className="relative w-full h-[160px] overflow-hidden bg-[#0f0f1a] flex items-center justify-center">
         <img 
           src={cert.imgPath} 
           alt={cert.issuer} 
-          className="w-full h-full object-contain p-2"
+          className="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-110"
         />
         {cert.level && (
           <span className={`absolute top-3 right-3 px-3 py-1 text-[10px] font-semibold rounded-full uppercase tracking-wider ${
             cert.level.toLowerCase() === 'beginner' ? 'bg-green-500/20 text-green-400' :
             cert.level.toLowerCase() === 'intermediate' ? 'bg-yellow-500/20 text-yellow-400' :
             'bg-red-500/20 text-red-400'
-          }`}>
+          } animate-pulse`}>
             {cert.level}
           </span>
         )}
       </div>
 
       <div className="p-4 flex flex-col gap-2 flex-1">
-        <h3 className="text-white text-sm font-semibold leading-snug line-clamp-2">
+        <h3 className="text-white text-sm font-semibold leading-snug line-clamp-2 group-hover:text-blue-400 transition-colors duration-300">
           {cert.title}
         </h3>
 
@@ -65,7 +68,7 @@ const CertCard = ({ cert }) => {
             {needsToggle && (
               <button
                 type="button"
-                className="text-blue-400 hover:text-blue-300 text-xs font-medium inline-flex align-baseline"
+                className="text-blue-400 hover:text-blue-300 text-xs font-medium inline-flex align-baseline transition-all duration-300"
                 aria-expanded={expanded}
                 onClick={() => setExpanded((prev) => !prev)}
               >
@@ -147,28 +150,37 @@ const Certifications = () => {
   };
 
   useGSAP(() => {
-    gsap.fromTo(
-      ".cert-card",
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: "#certifications",
-          start: "top 75%",
-        },
-      }
-    );
+    gsap.utils.toArray(".cert-card").forEach((card) => {
+      gsap.fromTo(
+        card,
+        { y: 40, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.9,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+        }
+      );
+    });
   }, []);
 
   useGSAP(() => {
     gsap.fromTo(
       ".cert-card",
-      { y: 16, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.06 }
+      { y: 30, opacity: 0, scale: 0.92 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1, 
+        duration: 0.6, 
+        ease: "power2.out", 
+        stagger: 0.08 
+      }
     );
   }, [selectedLevel, currentPage]);
 
@@ -204,13 +216,13 @@ const Certifications = () => {
         </div>
 
         {paginatedCertifications.length === 0 ? (
-          <p className="text-gray-400 text-center mt-16">
+          <p className="text-gray-400 text-center mt-16 animate-pulse">
             No certifications at this level yet — check back soon.
           </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {paginatedCertifications.map((cert) => (
-              <CertCard key={cert.title} cert={cert} />
+            {paginatedCertifications.map((cert, index) => (
+              <CertCard key={cert.title} cert={cert} index={index} />
             ))}
           </div>
         )}

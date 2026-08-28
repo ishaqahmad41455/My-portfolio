@@ -1,7 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
 // import HeroExperience from "../components/models/hero_models/HeroExperience";
@@ -20,6 +19,12 @@ const Hero = () => {
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
     );
+
+    gsap.fromTo(
+      ".hero-cta",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.9, delay: 0.5, ease: "power2.out" }
+    );
   });
 
   return (
@@ -31,7 +36,7 @@ const Hero = () => {
       <div className="hero-layout">
         {/* LEFT: Hero Content */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-6 md:gap-7">
             {/* Profile picture + name */}
             <div className="profile-intro">
               <img
@@ -70,11 +75,12 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I'm Ishaq, a DevOps Engineer building scalable cloud solutions.
+            <p className="hero-subtext text-white-50 md:text-xl relative z-10 pointer-events-none max-w-xl">
+              Hi, I'm Ishaq — a DevOps Engineer building and automating scalable, production-grade
+              cloud infrastructure.
             </p>
 
-            <div className="flex flex-wrap items-center gap-5 relative z-20">
+            <div className="hero-cta flex flex-wrap items-center gap-5 relative z-20">
               <Button
                 text="See My Work"
                 className="md:w-80 md:h-16 w-60 h-12"
@@ -107,8 +113,6 @@ const Hero = () => {
           </div>
         </figure>
       </div>
-
-      <AnimatedCounter />
     </section>
   );
 };

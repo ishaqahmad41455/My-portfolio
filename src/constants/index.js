@@ -132,12 +132,16 @@ const techStackImgs = [
   },
 ];
 
+// EDIT ME (optional): `category` groups these into the sections rendered by
+// TechStack.jsx (Cloud / IaC / Containers / CI-CD / Monitoring / Platform).
+// This is purely organizational — no technology was added or renamed.
 const techStackIcons = [
   {
     name: "AWS",
     modelPath: "/models/glbfiles/aws-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Cloud Platforms",
   },
   {
     // The azure-transformed.glb has no colored/front-facing geometry
@@ -147,6 +151,7 @@ const techStackIcons = [
     modelPath: "/models/glbfiles/azure.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Cloud Platforms",
   },
   {
     // gcp-transformed.glb lost its real shape in the optimize/compress step
@@ -156,18 +161,21 @@ const techStackIcons = [
     modelPath: "/models/glbfiles/gcp-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Cloud Platforms",
   },
   {
     name: "Terraform",
     modelPath: "/models/glbfiles/terraform-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Infrastructure as Code",
   },
   {
     name: "Kubernetes",
     modelPath: "/models/glbfiles/kubernetes-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Containers & Orchestration",
   },
   {
     // Same issue as Azure — the extruded side walls dominate the view
@@ -177,24 +185,28 @@ const techStackIcons = [
     modelPath: "/models/glbfiles/docker.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Containers & Orchestration",
   },
   {
     name: "Project Management",
     modelPath: "/models/glbfiles/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
+    category: "CI/CD & Version Control",
   },
   {
     name: "Azure DevOps",
     modelPath: "/models/glbfiles/azure-devops-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "CI/CD & Version Control",
   },
   {
     name: "Grafana",
     modelPath: "/models/glbfiles/grafana-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Monitoring & Observability",
   },
   // {
   //   name: "Machine Learning",
@@ -207,6 +219,7 @@ const techStackIcons = [
     modelPath: "/models/glbfiles/data-analysis-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    category: "Monitoring & Observability",
   },
 ];
 
@@ -273,6 +286,7 @@ const expLogos = [
   },
 ];
 
+
 // EDIT ME: replace with your real certifications. Remove entries you don't hold.
 // `level` drives the Beginner / Intermediate / Advanced filter on the
 // Certifications section — set it to whichever tier best matches the cert.
@@ -280,15 +294,15 @@ const certifications = [
   {
     title: "AWS Certified Solutions Architect – Associate",
     issuer: "Amazon Web Services",
-    date: "2026",
+    date: "Aug 2026",
     level: "Intermediate",
     description:
       "Validates the ability to design available, cost-efficient, fault-tolerant, and scalable distributed systems on AWS.",
-    imgPath: "/images/Icons/aws_cer1.png",
-    credentialUrl: "#",
+    imgPath: "/images/Icons/aws-certified-solutions-architect-associate.png",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/ac76678e-1d55-40ee-903e-fc51b06693b6",
   },
   {
-    title: "Microsoft Certified: DevOps Engineer Expert",
+    title: "Microsoft Certified: DevOps Engineer Expert Expected to be done in two weeks",
     issuer: "Microsoft",
     date: "2026",
     level: "Advanced",
@@ -337,7 +351,57 @@ const certifications = [
       "Advanced coursework on building custom API integrations and authentication flows using Make's HTTP modules.",
     imgPath: "/images/Icons/MakeCertificate.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/9a6bf5c4-dc0d-4417-910a-bbc28ac6b94b",
-  }
+  },
+  {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    date: "July 2026",
+    level: "Beginner",
+    description:
+      "Fundamentals of using Claude for everyday work tasks, understanding core features, and exploring resources for advanced learning.",
+    imgPath: "/images/Icons/cloude_101.png",
+    credentialUrl: "https://verify.skilljar.com/c/wgojzdrovyah", // Add your credential URL if available
+},
+{
+    title: "Claude Code 101",
+    issuer: "Anthropic",
+    date: "July 2026",
+    level: "Beginner",
+    description:
+      "Practical training on using Claude Code effectively in daily development workflows.",
+    imgPath: "/images/Icons/cloudecode_101.png",
+    credentialUrl: "https://verify.skilljar.com/c/u47vcoq24jgs",
+},
+{
+    title: "Claude Platform 101",
+    issuer: "Anthropic",
+    date: "July 2026",
+    level: "Intermediate",
+    description:
+      "Comprehensive course on building on the Claude Platform from the ground up, covering API calls and platform fundamentals.",
+    imgPath: "/images/Icons/claudeplatform_101.png",
+    credentialUrl: "https://verify.skilljar.com/c/jv9rjjwqk5wj",
+},
+{
+    title: "Introduction to Claude Cowork",
+    issuer: "Anthropic",
+    date: "July 2026",
+    level: "Intermediate",
+    description:
+      "Hands-on training on working alongside Claude on real files and projects, covering the Cowork task loop, plugins, skills, file workflows, and responsible multi-step work.",
+    imgPath: "/images/Icons/introduction to claude cowork.png",
+    credentialUrl: "https://verify.skilljar.com/c/aovoa5vp3dju",
+},
+{
+    title: "Claude Code in Action",
+    issuer: "Anthropic",
+    date: "July 2026",
+    level: "Advanced",
+    description:
+      "Practical course on running long, hands-off Claude Code sessions with confidence—steering, configuring, automating, and verifying workflows.",
+    imgPath: "/images/Icons/Claude Code in Action.png",
+    credentialUrl: "https://verify.skilljar.com/c/77cenecb5bsz",
+}
   // {
   //   title: "Certified Kubernetes Administrator (CKA)",
   //   issuer: "The Linux Foundation / CNCF",

@@ -7,6 +7,11 @@ import { counterItems } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Single source of truth for the "3+ / 20+ / 30+ / 90%" stats.
+// Previously this was duplicated: an animated copy sat directly under the
+// Hero, and a second, static copy was hard-coded inside AboutMe. This
+// component is now rendered ONCE, inside the About section, so the count-up
+// animation is preserved without the duplicate block.
 const AnimatedCounter = () => {
   const counterRef = useRef(null);
   const countersRef = useRef([]);
@@ -16,20 +21,17 @@ const AnimatedCounter = () => {
       const numberElement = counter.querySelector(".counter-number");
       const item = counterItems[index];
 
-      // Set initial value to 0
       gsap.set(numberElement, { innerText: "0" });
 
-      // Create the counting animation
       gsap.to(numberElement, {
         innerText: item.value,
         duration: 2.5,
         ease: "power2.out",
-        snap: { innerText: 1 }, // Ensures whole numbers
+        snap: { innerText: 1 },
         scrollTrigger: {
           trigger: "#counter",
-          start: "top center",
+          start: "top 85%",
         },
-        // Add the suffix after counting is complete
         onComplete: () => {
           numberElement.textContent = `${item.value}${item.suffix}`;
         },
@@ -38,18 +40,18 @@ const AnimatedCounter = () => {
   }, []);
 
   return (
-    <div id="counter" ref={counterRef} className="padding-x-lg xl:mt-0 mt-32">
-      <div className="mx-auto grid-4-cols">
+    <div id="counter" ref={counterRef} className="w-full">
+      <div className="mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
         {counterItems.map((item, index) => (
           <div
             key={index}
             ref={(el) => el && (countersRef.current[index] = el)}
-            className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center"
+            className="stat-card"
           >
-            <div className="counter-number text-white-50 text-5xl font-bold mb-2">
-              0 {item.suffix}
+            <div className="counter-number stat-number">
+              0{item.suffix}
             </div>
-            <div className="text-white-50 text-lg">{item.label}</div>
+            <div className="stat-label">{item.label}</div>
           </div>
         ))}
       </div>
