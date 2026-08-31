@@ -231,6 +231,7 @@ const expCards = [
     logoPath: "/images/logo4.png",
     title: "DevOps Engineer",
     date: "April 2025 - Present",
+    location: "Islamabad, Pakistan",
     responsibilities: [
       "Architected and managed CI/CD pipelines in Azure DevOps for .NET, Java, and Node.js applications, reducing deployment lead time by 40%.",
       "Engineered scalable hosting infrastructure using Azure App Services and IIS with health checks and automated rollback strategies.",
@@ -247,6 +248,7 @@ const expCards = [
     logoPath: "/images/logo5.png",
     title: "DevOps Engineer",
     date: "July 2023 - April 2025",
+    location: "Islamabad, Pakistan",
     responsibilities: [
       "Built CI/CD pipelines using Jenkins, GitHub Actions, and Azure DevOps, improving deployment reliability by 35%.",
       "Implemented Docker-based application deployments across cloud and on-premises environments.",
@@ -263,6 +265,7 @@ const expCards = [
     logoPath: "/images/logo6.png",
     title: "Machine Learning Engineering Intern",
     date: "July 2026 - August 2026",
+    location: "Remote",
     responsibilities: [
       "Accepted into the FlyRank AI Internship program as a Machine Learning Engineering Intern.",
       "Participated in a six-week Machine Learning internship program from July 1, 2026, to August 12, 2026.",
