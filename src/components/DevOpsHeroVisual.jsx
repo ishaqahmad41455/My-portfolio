@@ -1,7 +1,8 @@
 // A lightweight, dependency-free animated DevOps illustration for the hero
 // section: a CI/CD pipeline (code -> build -> cloud) with traveling pulse
-// dots, plus a small looping "terminal" card. Pure SVG + CSS animation —
-// no WebGL/GLTF, so it can't suffer the flicker issues the 3D models had.
+// dots, floating status chips, and a small looping "terminal" card. Pure
+// SVG + CSS animation — no WebGL/GLTF, so it can't suffer the flicker
+// issues the 3D models had.
 const PIPELINE_PATH =
   "M 70 360 C 140 230, 230 230, 280 230 S 420 230, 500 90";
 
@@ -10,6 +11,14 @@ const DevOpsHeroVisual = () => {
     <div className="devops-hero-visual">
       <div className="devops-glow devops-glow-1" />
       <div className="devops-glow devops-glow-2" />
+
+      {/* Floating status chips */}
+      <div className="floating-badge floating-badge-1">
+        {/* <span>⚡</span> CI/CD Automated */}
+      </div>
+      <div className="floating-badge floating-badge-2">
+        {/* <span>☁️</span> Multi-Cloud */}
+      </div>
 
       <svg
         viewBox="0 0 560 420"
@@ -123,7 +132,9 @@ const DevOpsHeroVisual = () => {
             <span className="prompt">$</span> docker build -t app .
           </p>
           <p className="line-dim">Deploying to production…</p>
-          <p className="line-success">✓ Deployment successful</p>
+          <p className="line-success">
+            ✓ Deployment successful <span className="cursor-blink">▊</span>
+          </p>
         </div>
       </div>
     </div>

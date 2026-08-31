@@ -2005,6 +2005,178 @@ section {
     filter: blur(55px);
   }
 }
+/* Availability badge */
+.availability-badge {
+  @apply inline-flex items-center gap-2 text-xs md:text-sm font-medium text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 rounded-full px-3 py-1.5 w-fit;
+}
+
+.pulse-dot {
+  @apply relative inline-flex size-2 rounded-full bg-emerald-400;
+}
+
+.pulse-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: inherit;
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Gradient accent word in the headline */
+.gradient-text-hero {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Quick trust-signal stats row */
+.hero-stats {
+  @apply flex items-center gap-5 md:gap-8 flex-wrap relative z-10;
+}
+
+.hero-stat {
+  @apply flex flex-col;
+}
+
+.hero-stat-value {
+  @apply text-xl md:text-2xl font-bold;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-stat-label {
+  @apply text-[11px] md:text-xs text-white-50;
+}
+
+.hero-stat-divider {
+  @apply w-px h-8 bg-black-50;
+}
+
+/* Download CV glow on hover */
+.download-cv-btn {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.download-cv-btn:hover {
+  box-shadow: 0 0 26px rgba(76, 201, 240, 0.28);
+  border-color: rgba(76, 201, 240, 0.5);
+}
+
+/* Floating status chips over the hero visual */
+.floating-badge {
+  @apply absolute flex items-center gap-1.5 text-[11px] md:text-xs font-medium text-white bg-black-200/70 border border-black-50 rounded-full px-3 py-1.5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: float-badge 4.5s ease-in-out infinite;
+  z-index: 5;
+}
+
+.floating-badge-1 {
+  top: 6%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.floating-badge-2 {
+  bottom: 18%;
+  right: 0%;
+  animation-delay: 1.6s;
+}
+
+@keyframes float-badge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Terminal card: subtle gradient border glow + blinking cursor */
+.devops-terminal {
+  position: relative;
+}
+
+.devops-terminal::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 15px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(76, 201, 240, 0.45), rgba(157, 78, 221, 0.45));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+  color: #27c93f;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Scroll cue */
+.scroll-cue {
+  @apply hidden md:flex flex-col items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 text-white-50 text-[11px] tracking-wide z-20;
+  animation: scroll-cue-fade 2.4s ease-in-out infinite;
+}
+
+.scroll-cue-mouse {
+  @apply w-5 h-8 rounded-full border border-black-50 flex justify-center pt-1.5;
+}
+
+.scroll-cue-wheel {
+  @apply w-1 h-1.5 rounded-full bg-white-50;
+  animation: scroll-cue-wheel 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-wheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-cue-fade {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 
 /* ================================================================
