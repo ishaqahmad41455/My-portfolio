@@ -314,6 +314,24 @@ const certifications = [
     imgPath: "/images/Icons/azure_cer1.png",
     credentialUrl: "#",
   },
+  {
+    "title": "Machine Learning Internship Program",
+    "issuer": "FlyRank.ai",
+    "date": "2026",
+    "level": "Intermediate",
+    "description": "Completed a 2-month internship program focused on AI Fluency and Machine Learning, demonstrating excellence in technical competency, professional conduct, and collaborative contribution.",
+    "imgPath": "/images/Icons/flyrank-certificate-of-completion-machine-learning.png",
+    "credentialUrl": "#",
+  },
+  {
+    "title": "AI Fluency Internship Program",
+    "issuer": "FlyRank.ai",
+    "date": "2026",
+    "level": "Intermediate",
+    "description": "Completed a 2-month internship program focused on AI Fluency, demonstrating excellence in technical competency, professional conduct, and collaborative contribution.",
+    "imgPath": "/images/Icons/flyrank-certificate-of-completion-ai-fluency.png",
+    "credentialUrl": "#",
+  },
   // --- new Google Cloud Skill Badges ---
   {
     title: "Implement Cloud Security Fundamentals on Google Cloud",
@@ -364,8 +382,8 @@ const certifications = [
       "Fundamentals of using Claude for everyday work tasks, understanding core features, and exploring resources for advanced learning.",
     imgPath: "/images/Icons/cloude_101.png",
     credentialUrl: "https://verify.skilljar.com/c/wgojzdrovyah", // Add your credential URL if available
-},
-{
+  },
+  {
     title: "Claude Code 101",
     issuer: "Anthropic",
     date: "July 2026",
@@ -374,8 +392,8 @@ const certifications = [
       "Practical training on using Claude Code effectively in daily development workflows.",
     imgPath: "/images/Icons/cloudecode_101.png",
     credentialUrl: "https://verify.skilljar.com/c/u47vcoq24jgs",
-},
-{
+  },
+  {
     title: "Claude Platform 101",
     issuer: "Anthropic",
     date: "July 2026",
@@ -384,8 +402,8 @@ const certifications = [
       "Comprehensive course on building on the Claude Platform from the ground up, covering API calls and platform fundamentals.",
     imgPath: "/images/Icons/claudeplatform_101.png",
     credentialUrl: "https://verify.skilljar.com/c/jv9rjjwqk5wj",
-},
-{
+  },
+  {
     title: "Introduction to Claude Cowork",
     issuer: "Anthropic",
     date: "July 2026",
@@ -394,8 +412,8 @@ const certifications = [
       "Hands-on training on working alongside Claude on real files and projects, covering the Cowork task loop, plugins, skills, file workflows, and responsible multi-step work.",
     imgPath: "/images/Icons/introduction to claude cowork.png",
     credentialUrl: "https://verify.skilljar.com/c/aovoa5vp3dju",
-},
-{
+  },
+  {
     title: "Claude Code in Action",
     issuer: "Anthropic",
     date: "July 2026",
@@ -404,7 +422,7 @@ const certifications = [
       "Practical course on running long, hands-off Claude Code sessions with confidence—steering, configuring, automating, and verifying workflows.",
     imgPath: "/images/Icons/Claude Code in Action.png",
     credentialUrl: "https://verify.skilljar.com/c/77cenecb5bsz",
-}
+  }
   // {
   //   title: "Certified Kubernetes Administrator (CKA)",
   //   issuer: "The Linux Foundation / CNCF",
