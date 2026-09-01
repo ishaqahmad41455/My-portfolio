@@ -264,7 +264,7 @@ const expCards = [
     imgPath: "/images/exp6.png",
     logoPath: "/images/logo6.png",
     title: "Machine Learning Engineering Intern",
-    date: "July 2026 - August 2026",
+    date: "July 2026 - September 2026",
     location: "Remote",
     responsibilities: [
       "Accepted into the FlyRank AI Internship program as a Machine Learning Engineering Intern.",
