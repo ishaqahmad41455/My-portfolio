@@ -312,8 +312,11 @@ section {
      HERO
      ============================================================= */
 
-  .hero-layout {
+  /* .hero-layout {
     @apply relative z-10 xl:mt-16 mt-28 min-h-[92vh] py-16 md:py-20 flex xl:items-center items-start justify-center;
+  } */
+  .hero-layout {
+    @apply relative z-10 xl:mt-16 mt-28 min-h-[92vh] py-16 md:py-20 flex flex-col md:flex-row xl:items-center items-start justify-center gap-12 md:gap-0;
   }
 
   .hero-subtext {
@@ -397,14 +400,18 @@ section {
     transform: translateY(-2px);
   }
 
-  .hero-3d-layout {
+  /* .hero-3d-layout {
     @apply absolute xl:w-[60%] lg:w-[55%] md:w-[50%] w-full h-full;
 
     right: 0;
     top: 50%;
 
     transform: translateY(-50%);
+  } */
+  .hero-3d-layout {
+    @apply relative md:absolute w-full md:w-[50%] lg:w-[55%] xl:w-[60%] h-[280px] sm:h-[340px] md:h-full mt-2 md:mt-0;
   }
+
 
 
   /* =============================================================
@@ -1980,31 +1987,65 @@ section {
    RESPONSIVE POLISH
    ================================================================ */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .hero-3d-layout {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 767px) {
   body {
     background:
-      radial-gradient(ellipse 500px 400px at 50% -10%,
+      radial-gradient(
+        ellipse 500px 400px at 50% -10%,
         rgba(76, 201, 240, 0.055),
-        transparent 70%),
+        transparent 70%
+      ),
       var(--bg-base);
   }
 
   body::before {
-    background-size: 52px 52px;
+    background-size: 40px 40px;
+    opacity: 0.4;
+  }
 
-    opacity: 0.55;
+  .devops-glow {
+    opacity: 0.18;
+    filter: blur(45px);
+  }
+
+  .devops-hero-visual {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .devops-terminal {
+    width: min(230px, 62%);
+    padding: 10px;
+    bottom: 4%;
+  }
+
+  .devops-terminal-lines p {
+    font-size: 9.5px;
+  }
+
+  .floating-badge {
+    display: none;
   }
 
   .portfolio-card:hover {
     transform: translateY(-2px);
   }
+}
 
-  .devops-glow {
-    opacity: 0.22;
-
-    filter: blur(55px);
+@media (min-width: 640px) {
+  .floating-badge {
+    display: flex;
   }
 }
+
 /* Availability badge */
 .availability-badge {
   @apply inline-flex items-center gap-2 text-xs md:text-sm font-medium text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 rounded-full px-3 py-1.5 w-fit;
@@ -2028,6 +2069,7 @@ section {
     transform: scale(1);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(2.6);
     opacity: 0;
@@ -2101,10 +2143,12 @@ section {
 }
 
 @keyframes float-badge {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -2159,20 +2203,24 @@ section {
     transform: translateY(0);
     opacity: 1;
   }
+
   70% {
     transform: translateY(8px);
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
 }
 
 @keyframes scroll-cue-fade {
+
   0%,
   100% {
     opacity: 0.5;
   }
+
   50% {
     opacity: 1;
   }
